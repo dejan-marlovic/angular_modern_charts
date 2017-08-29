@@ -1,184 +1,113 @@
 class BarChartProperties
 {
-  BarChartProperties(this.xAxisLabelFontFamily,
-      this.height,
-      this.showBarLabels,
-      this.xAxisLineWidth,
-      this.barLabelFontSize,
-      this.barLabelColor,
-      this.barLabelFontStyle,
-      this.crosshairRgbaColor,
-      this.crosshairEnabled,
-      this.gridLineColor,
-      this.gridLineWidth,
-      this.xAxisColor,
-      this.xAxisLabelmaxRotation,
-      this.xAxisLabelminRotation,
-      this.xAxisLabelColor,
-      this.xAxisLabelFontSize,
-      this.xAxisLabelsFontStyle,
-      this.chartTitleColor,
-      this.chartTitlelFontFamily,
-      this.chartTitleFontStyle,
-      this.chartTitle,
-      this.verticalGridLineColor,
-      this.verticalGridLineWidth,
-      this.yAxisColor,
-      this.yAxisLineWidth,
-      this.yAxisInterval,
-      this.yAxisLabelsColor,
-      this.yAxisLabelsFontFamily,
-      this.yAxisLabeslFontSize,
-      this.yAxisLabelsFontStyle,
-      this.yAxisMaxValue,
-      this.yAxisMinValue,
-      this.yAxisMinInterval,
-      this.yAxisTitleColor,
-      this.yAxisTitleFontFamily,
-      this.yAxisTitleFontSize,
-      this.yAxisTitleFontStyle,
-      this.yAxisTitle);
 
-  Map<dynamic, dynamic> get encoded
+  BarChartProperties(this.height);
+
+  Map<String, dynamic> get encoded
   {
-    /*
-    Map<String, dynamic> output;
 
-    Map<dynamic, dynamic> barchartOptions = new Map<dynamic,dynamic>();
-    barchartOptions["series"] = new Map<dynamic, dynamic>();
-    barchartOptions["series"]['labels'] = new Map<dynamic, dynamic>();
-    barchartOptions["series"]['labels']["enabled"] = showBarLabels;
-    barchartOptions["series"]['labels']["style"] = new Map<dynamic, dynamic>();
-    barchartOptions["series"]['labels']["style"]["fontFamily"] = xAxisLabelFontFamily;
-    Map<dynamic, dynamic> whatever = {
-      'series': {
-        'labels': {
-          'enabled': showBarLabels != null ? showBarLabels : true,
-          'style': {
-            'color': barLabelColor != null ? barLabelColor :'#212121',
-            'fontFamily': xAxisLabelFontFamily,
-            'fontSize': fontSize != null ? fontSize: 15,
-            'fontStyle': labelFontStyle != null ? labelFontStyle: "normal",
-          }
-        }
-      },
-      'xAxis': {
-        'crosshair': {
-          'color': crosshairRgbaColor != null ? crosshairRgbaColor : 'rgba(0, 0, 0, .02)',
-          'enabled': crosshairEnabled != null ? crosshairEnabled : false,
-        },
-        'gridLineColor': gridLineColor != null ? gridLineColor : '#c0c0c0',
-        'gridLineWidth': gridLineWidth != null ? gridLineWidth : 1,
-        'lineColor': axisLineColor != null ? axisLineColor : '#c0c0c0',
-        'lineWidth': axisLineWidth != null ? axisLineWidth : 1,
-        // Map - An object that controls the axis labels.
-        'labels': {
-          // num - The maximum rotation angle in degrees. Must be <= 90.
-          'maxRotation': maxRotation != null ? maxRotation :  0,
-          // num - The minimum rotation angle in degrees. Must be >= -90.
-          'minRotation': minRotation != null ? minRotation : -90,
-          'style': {
-            'color': axisLabelColor != null ? axisLabelColor : '#212121',
-            'fontFamily': xAxisLabelFontFamily != null ? xAxisLabelFontFamily : '"Segoe UI", "Open Sans", Verdana, Arial',
-            'fontSize': axisLabelFontSize != null ? axisLabelFontSize : 13,
-            'fontStyle': axisLabelsFontStyle != null ? axisLabelsFontStyle : 'normal'
-          }
-        },
-        // String - The position of the axis relative to the chart area.
-        // Supported values: 'bottom'.
-        'position': 'bottom',
-        'title': {
-          'style': {
-            'color': chartTitleColor != null ? chartTitleColor : '#212121',
-            'fontFamily': chartTitlelFontFamily != null ? chartTitlelFontFamily : '"Segoe UI", "Open Sans", Verdana, Arial',
-            'fontSize': chartTitleFontSize != null ? chartTitleFontSize : 15,
-            'fontStyle': chartTitleFontStyle != null ?  chartTitleFontStyle : 'normal'
-          },
-          'text': chartTitle != null ? chartTitle : null
-        }
-      },
-      // Map - An object that controls the y-axis.
-      'yAxis': {
-        'gridLineColor': verticalGridLineColor != null ? verticalGridLineColor : '#c0c0c0',
-        'gridLineWidth': verticalGridLineWidth != null ? verticalGridLineWidth : 0,
-        'lineColor': yAxisColor != null ? yAxisColor : '#c0c0c0',
-        'lineWidth': yAxisLineWidth != null ? yAxisLineWidth : 0,
-        'interval': yAxisInterval != null ? yAxisInterval : null,
-        'labels': {
-          // (num value) -> String - A function that formats the labels.
-          'formatter': null,
-          'style': {
-            'color': yAxisLabelColor != null ? yAxisLabelColor : '#212121',
-            'fontFamily': yAxisLabelsFontFamily != null ? yAxisLabelsFontFamily : '"Segoe UI", "Open Sans", Verdana, Arial',
-            'fontSize': yAxisLabelFontSize != null ? yAxisLabelFontSize : 13,
-            'fontStyle': yAxisLabelsFontStyle != null ? yAxisLabelsFontStyle : 'normal'
-          },
-        },
-        'maxValue': yAxisMaxValue != null ? yAxisMaxValue :null,
-        'minInterval': yAxisMinInterval != null ? yAxisMinInterval : null,
-        'minValue': yAxisMinValue != null ? yAxisMinValue : null,
-        // String - The position of the axis relative to the chart area.
-        // Supported values: 'left'.
-        'position': 'left',
-        'title': {
-          'style': {
-            'color': yAxisTitleColor != null ? yAxisTitleColor : '#212121',
-            'fontFamily': yAxisTitleFontFamily != null ? yAxisTitleFontFamily : '"Segoe UI", "Open Sans", Verdana, Arial' ,
-            'fontSize': yAxisTitleFontSize != null ? yAxisTitleFontSize : 13,
-            'fontStyle': yAxisTitleFontStyle != null ? yAxisTitleFontStyle : 'normal'
-          },
-          'text': yAxisTitle != null ? yAxisTitle :  null
-        }
-      }
-    };
+    Map<String, dynamic> output = new Map<String, dynamic>();
 
+    Map<String, dynamic> options = new Map<String, dynamic>();
+    options["series"] = new Map<String, dynamic>();
+    options["series"]['labels'] = new Map<String, dynamic>();
+    options["series"]['labels']["enabled"] = showBarLabels;
+    options["series"]['labels']["style"] = new Map<String, dynamic>();
+    options["series"]['labels']["style"]["fontFamily"] = xAxisLabelFontFamily;
+    options["series"]['labels']["style"]["fonSize"] = barLabelFontSize;
+    options["series"]['labels']["style"]["fonStyle"] = barLabelFontStyle;
+    options["xAxis"] = new Map<String, dynamic>();
+    options["xAxis"]['crosshair'] = new Map<String, dynamic>();
+    options["xAxis"]['crosshair']['color'] = crosshairRgbaColor;
+    options["xAxis"]['crosshair']['enabled'] = crosshairEnabled;
+    options["xAxis"]['gridLineColor'] = gridLineColor;
+    options["xAxis"]['gridLineWidth'] = gridLineWidth;
+    options["xAxis"]['lineColor'] = xAxisColor;
+    options["xAxis"]['lineWidth'] = xAxisLineWidth;
+    options["xAxis"]['labels']  = new Map<String, dynamic>();
+    options["xAxis"]['labels']['maxRotation'] = xAxisLabelMaxRotation;
+    options["xAxis"]['labels']['minRotation'] = xAxisLabelMinRotation;
+    options["xAxis"]['labels']['style'] = new Map<String, dynamic>();
+    options["xAxis"]['labels']['style']['color'] = xAxisLabelColor;
+    options["xAxis"]['labels']['style']['fontFamily'] = xAxisLabelFontFamily;
+    options["xAxis"]['labels']['style']['fontSize'] = xAxisLabelFontSize;
+    options["xAxis"]['labels']['style']['fontStyle'] = xAxisLabelsFontStyle;
+    options["xAxis"]['position'] = 'bottom'; //only bottom supported
+    options["xAxis"]['title'] = new Map<String, dynamic>();
+    options["xAxis"]['title']['style'] = new Map<String, dynamic>();
+    options["xAxis"]['title']['style']['color'] = chartTitleColor;
+    options["xAxis"]['title']['style']['fontFamily'] = chartTitleFontFamily;
+    options["xAxis"]['title']['style']['fontSize'] = chartTitleFontSize;
+    options["xAxis"]['title']['style']['fontStyle'] = chartTitleFontStyle;
+    options["xAxis"]['title']['text'] = chartTitle;
 
+    options["yAxis"] = new Map<String, dynamic>();
+    options["yAxis"]['gridLineColor'] = verticalGridLineColor;
+    options["yAxis"]['gridLineWidth'] = gridLineWidth;
+    options["yAxis"]['lineColor'] = yAxisColor;
+    options["yAxis"]['interval'] = yAxisInterval;
+    options["yAxis"]['labels'] = new Map<String, dynamic>();
+    options["yAxis"]['labels']['formatter'] = null;
+    options["yAxis"]['labels']['style'] =  new Map<String, dynamic>();
+    options["yAxis"]['labels']['style']['fontFamily'] = yAxisLabelsFontFamily;
+    options["yAxis"]['labels']['style']['fontSize'] = yAxisLabeslFontSize;
+    options["yAxis"]['labels']['style']['fontStyle'] = yAxisLabelsFontStyle;
+    options["yAxis"]['labels']['style']['color'] = yAxisLabelColor;
+    options["yAxis"]['maxValue'] = yAxisMaxValue;
+    options["yAxis"]['postion'] = 'left';
+    options["yAxis"]['title'] =  new Map<String, dynamic>();
+    options["yAxis"]['title']['text'] = yAxisTitle;
+    options["yAxis"]['title']['style'] = new Map<String, dynamic>();
+    options["yAxis"]['title']['style']['color'] = yAxisTitleColor;
+    options["yAxis"]['title']['style']['fontFamily'] = yAxisTitleFontFamily;
+    options["yAxis"]['title']['style']['fontSize'] = yAxisTitleFontSize;
+    options["yAxis"]['title']['style']['fontStyle'] = yAxisTitleFontStyle;
 
     return output;
-    */
   }
 
 
 
 
-  String xAxisLabelFontFamily;
+  String xAxisLabelFontFamily = '"Segoe UI", "Open Sans", Verdana, Arial';
   String height;
   bool showBarLabels = true;
-  int xAxisLineWidth;
-  int barLabelFontSize;
+  int xAxisLineWidth = 1;
+  int barLabelFontSize = 15;
   String barLabelColor = "#212121";
-  String barLabelFontStyle;
-  String crosshairRgbaColor;
-  bool crosshairEnabled;
-  String gridLineColor;
-  int gridLineWidth;
-  String xAxisColor;
-  int xAxisLabelmaxRotation;
-  int xAxisLabelminRotation;
-  String xAxisLabelColor;
-  int xAxisLabelFontSize;
-  String xAxisLabelsFontStyle;
-  String chartTitleColor;
-  String chartTitlelFontFamily;
-  int chartTitleFontSize;
-  String chartTitleFontStyle;
-  String chartTitle;
+  String barLabelFontStyle = 'normal';
+  String crosshairRgbaColor = 'rgba(0, 0, 0, .02)';
+  bool crosshairEnabled = true;
+  String gridLineColor = '#c0c0c0';
+  int gridLineWidth = 1;
+  String xAxisColor = '#c0c0c0';
+  int xAxisLabelMaxRotation = 0;
+  int xAxisLabelMinRotation = -90;
+  String xAxisLabelColor = '#212121';
+  int xAxisLabelFontSize = 15;
+  String xAxisLabelsFontStyle = 'normal';
+  String chartTitleColor = '#212121';
+  String chartTitleFontFamily = '"Segoe UI", "Open Sans", Verdana, Arial';
+  int chartTitleFontSize = 15;
+  String chartTitleFontStyle = 'normal';
+  String chartTitle = null;
 
-  String verticalGridLineColor;
-  int verticalGridLineWidth;
-  String yAxisColor;
-  int yAxisLineWidth;
-  int yAxisInterval;
-  String yAxisLabelsColor;
-  String yAxisLabelsFontFamily;
-  int yAxisLabeslFontSize;
-  String yAxisLabelsFontStyle;
-  int yAxisMaxValue;
-  double yAxisMinInterval;
-  int yAxisMinValue;
-  String yAxisTitleColor;
-  String yAxisTitleFontFamily;
-  int yAxisTitleFontSize;
-  String yAxisTitleFontStyle;
-  String yAxisTitle;
+  String verticalGridLineColor = '#c0c0c0';
+  int verticalGridLineWidth = 0;
+  String yAxisColor = '#c0c0c0';
+  int yAxisLineWidth = 0;
+  int yAxisInterval = null;
+  String yAxisLabelColor = '#212121';
+  String yAxisLabelsFontFamily = '"Segoe UI", "Open Sans", Verdana, Arial';
+  int yAxisLabeslFontSize = 15;
+  String yAxisLabelsFontStyle = "normal";
+  int yAxisMaxValue = null;
+  double yAxisMinInterval = null;
+  int yAxisMinValue = null;
+  String yAxisTitleColor = '#212121';
+  String yAxisTitleFontFamily = '"Segoe UI", "Open Sans", Verdana, Arial';
+  int yAxisTitleFontSize = 15;
+  String yAxisTitleFontStyle = 'normal';
+  String yAxisTitle = null;
+
 }
