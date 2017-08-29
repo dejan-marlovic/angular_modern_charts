@@ -1,35 +1,61 @@
-import 'package:angular/angular.dart';
-import 'package:modern_charts/modern_charts.dart';
-
-@Component(
-    selector: 'barchart',
-    styleUrls: const ['barchart_component.css'],
-    templateUrl: 'barchart_component.html'
-)
-class BarChartComponent implements AfterViewInit, OnChanges, AfterContentInit
+class BarChartProperties
 {
-  void ngAfterViewInit()
-  {
-    print("view");
-    print(_barChartDefaultOptions);
-    chartRef.nativeElement.style.height = height;
-    _chart = new BarChart(chartRef.nativeElement);
-    if (dataTable != null && _chart != null) _chart.draw(dataTable , _barChartDefaultOptions);
-  }
+  BarChartProperties(this.xAxisLabelFontFamily,
+      this.height,
+      this.showBarLabels,
+      this.xAxisLineWidth,
+      this.barLabelFontSize,
+      this.barLabelColor,
+      this.barLabelFontStyle,
+      this.crosshairRgbaColor,
+      this.crosshairEnabled,
+      this.gridLineColor,
+      this.gridLineWidth,
+      this.xAxisColor,
+      this.xAxisLabelmaxRotation,
+      this.xAxisLabelminRotation,
+      this.xAxisLabelColor,
+      this.xAxisLabelFontSize,
+      this.xAxisLabelsFontStyle,
+      this.chartTitleColor,
+      this.chartTitlelFontFamily,
+      this.chartTitleFontStyle,
+      this.chartTitle,
+      this.verticalGridLineColor,
+      this.verticalGridLineWidth,
+      this.yAxisColor,
+      this.yAxisLineWidth,
+      this.yAxisInterval,
+      this.yAxisLabelsColor,
+      this.yAxisLabelsFontFamily,
+      this.yAxisLabeslFontSize,
+      this.yAxisLabelsFontStyle,
+      this.yAxisMaxValue,
+      this.yAxisMinValue,
+      this.yAxisMinInterval,
+      this.yAxisTitleColor,
+      this.yAxisTitleFontFamily,
+      this.yAxisTitleFontSize,
+      this.yAxisTitleFontStyle,
+      this.yAxisTitle);
 
-  ngOnChanges(Map<String, SimpleChange> changes)
+  Map<dynamic, dynamic> get encoded
   {
-    if (dataTable != null && _chart != null) _chart.draw(dataTable, _barChartDefaultOptions);
-  }
+    /*
+    Map<String, dynamic> output;
 
-  ngAfterContentInit()
-  {
-    _barChartDefaultOptions = {
+    Map<dynamic, dynamic> barchartOptions = new Map<dynamic,dynamic>();
+    barchartOptions["series"] = new Map<dynamic, dynamic>();
+    barchartOptions["series"]['labels'] = new Map<dynamic, dynamic>();
+    barchartOptions["series"]['labels']["enabled"] = showBarLabels;
+    barchartOptions["series"]['labels']["style"] = new Map<dynamic, dynamic>();
+    barchartOptions["series"]['labels']["style"]["fontFamily"] = xAxisLabelFontFamily;
+    Map<dynamic, dynamic> whatever = {
       'series': {
         'labels': {
-          'enabled': showLabels != null ? showLabels : true,
+          'enabled': showBarLabels != null ? showBarLabels : true,
           'style': {
-            'color': labelColor != null ? labelColor :'#212121',
+            'color': barLabelColor != null ? barLabelColor :'#212121',
             'fontFamily': xAxisLabelFontFamily,
             'fontSize': fontSize != null ? fontSize: 15,
             'fontStyle': labelFontStyle != null ? labelFontStyle: "normal",
@@ -85,7 +111,7 @@ class BarChartComponent implements AfterViewInit, OnChanges, AfterContentInit
             'color': yAxisLabelColor != null ? yAxisLabelColor : '#212121',
             'fontFamily': yAxisLabelsFontFamily != null ? yAxisLabelsFontFamily : '"Segoe UI", "Open Sans", Verdana, Arial',
             'fontSize': yAxisLabelFontSize != null ? yAxisLabelFontSize : 13,
-            'fontStyle': yAxisLabelFontStyle != null ? yAxisLabelFontStyle : 'normal'
+            'fontStyle': yAxisLabelsFontStyle != null ? yAxisLabelsFontStyle : 'normal'
           },
         },
         'maxValue': yAxisMaxValue != null ? yAxisMaxValue :null,
@@ -105,136 +131,54 @@ class BarChartComponent implements AfterViewInit, OnChanges, AfterContentInit
         }
       }
     };
-    if (dataTable != null && _chart != null)
-    {
-      _chart.draw(dataTable, _barChartDefaultOptions);
-    }
+
+
+
+    return output;
+    */
   }
 
-  BarChart _chart;
-  var _barChartDefaultOptions;
 
-  @Input('xAxisLabelFontFamily')
+
+
   String xAxisLabelFontFamily;
-
-  @ViewChild('chart')
-  ElementRef chartRef;
-
-  @Input('dataTable')
-  DataTable dataTable;
-
-  @Input('height')
   String height;
-
-  @Input('showLabels')
-  bool showLabels;
-
-  @Input('axisLineWidth')
-  int axisLineWidth;
-
-  @Input('fontSize')
-  int fontSize;
-
-  @Input('labelColor')
-  String labelColor;
-
-  @Input('labelFontStyle')
-  String labelFontStyle;
-
-  @Input('crosshairRgbaColor')
+  bool showBarLabels = true;
+  int xAxisLineWidth;
+  int barLabelFontSize;
+  String barLabelColor = "#212121";
+  String barLabelFontStyle;
   String crosshairRgbaColor;
-
-  @Input('crosshairEnabled')
   bool crosshairEnabled;
-
-  @Input ('gridLineColor')
   String gridLineColor;
-
-  @Input ('gridLineWidth')
   int gridLineWidth;
-
-  @Input('axislineColor')
-  String axisLineColor;
-
-  @Input('maxRotation')
-  int maxRotation;
-
-  @Input('minRotation')
-  int minRotation;
-
-  @Input('axisLabelColor')
-  String axisLabelColor;
-
-  @Input('axisLabelFontSize')
-  int axisLabelFontSize;
-
-  @Input('axisLabelsFontStyle')
-  String axisLabelsFontStyle;
-
-  @Input('chartTitleColor')
+  String xAxisColor;
+  int xAxisLabelmaxRotation;
+  int xAxisLabelminRotation;
+  String xAxisLabelColor;
+  int xAxisLabelFontSize;
+  String xAxisLabelsFontStyle;
   String chartTitleColor;
-
-  @Input('chartTitlelFontFamily')
   String chartTitlelFontFamily;
-
-  @Input('chartTitleFontSize')
   int chartTitleFontSize;
-
-  @Input('chartTitleFontStyle')
   String chartTitleFontStyle;
-
-  @Input('chartTitle')
   String chartTitle;
 
-  @Input('verticalGridLineColor')
   String verticalGridLineColor;
-
-  @Input ('verticalGridLineWidth')
   int verticalGridLineWidth;
-
-  @Input('yAxisColor')
   String yAxisColor;
-
-  @Input('yAxisLineWidth')
   int yAxisLineWidth;
-
-  @Input('yAxisInterval')
   int yAxisInterval;
-
-  @Input ('yAxisLabelColor')
-  String yAxisLabelColor;
-
-  @Input('yAxisLabeslFontFamily')
+  String yAxisLabelsColor;
   String yAxisLabelsFontFamily;
-
-  @Input('yAxisLabelFontSize')
-  int yAxisLabelFontSize;
-
-  @Input('yAxisLabelFontStyle')
-  String yAxisLabelFontStyle;
-
-  @Input('yAxisMaxValue')
+  int yAxisLabeslFontSize;
+  String yAxisLabelsFontStyle;
   int yAxisMaxValue;
-
-  @Input('yAxisMinInterval')
   double yAxisMinInterval;
-
-  @Input('yAxisMinValue')
   int yAxisMinValue;
-
-  @Input('yAxisTitleColor')
   String yAxisTitleColor;
-
-  @Input('yAxisTitleFontFamily')
   String yAxisTitleFontFamily;
-
-  @Input('yAxisTitleFontSize')
   int yAxisTitleFontSize;
-
-  @Input('yAxisTitleFontStyle')
   String yAxisTitleFontStyle;
-
-  @Input('yAxisTitle')
   String yAxisTitle;
 }
-
