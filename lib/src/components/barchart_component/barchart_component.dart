@@ -11,8 +11,6 @@ class BarChartComponent implements AfterViewInit, OnChanges, AfterContentInit
 {
   void ngAfterViewInit()
   {
-    print("view");
-    print(chartProperties);
     chartRef.nativeElement.style.height = chartProperties.height;
     _chart = new BarChart(chartRef.nativeElement);
     if (dataTable != null && _chart != null && chartProperties != null) _chart.draw(dataTable , chartProperties.encoded);
