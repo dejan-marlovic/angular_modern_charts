@@ -1,14 +1,13 @@
 import 'package:modern_charts/modern_charts.dart';
 
-class BarChartData
+class LineChartData
 {
-  BarChartData(this._categories, this._columns)
+  LineChartData(this._categories, this._columns)
   {
-    for(BarChartColumnData ColumnObject in _columns)
+    for(LineChartColumnData ColumnObject in _columns)
     {
       if (ColumnObject._data.length != _categories.length) throw new StateError('Each column has to contain same number of values as there are categories. Supplay null value if data is missing for a category!');
     }
-
     _categories.insert(0, "Categories");
   }
 
@@ -20,13 +19,13 @@ class BarChartData
     return new DataTable(output);
   }
 
-  final List<BarChartColumnData> _columns;
+  final List<LineChartColumnData> _columns;
   final List<String> _categories;
 }
 
-class BarChartColumnData
+class LineChartColumnData
 {
-  BarChartColumnData(this._name, this._data);
+  LineChartColumnData(this._name, this._data);
 
   List<dynamic> get encoded
   {

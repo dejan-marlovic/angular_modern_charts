@@ -1,35 +1,45 @@
-class BarChartProperties
+class LineChartProperties
 {
 
-  BarChartProperties(this.height);
+  LineChartProperties(this.height);
 
   Map<String, dynamic> get encoded
   {
     Map<String, dynamic> options = new Map<String, dynamic>();
     options["series"] = new Map<String, dynamic>();
-    options["series"]['labels'] = new Map<String, dynamic>();
-    options["series"]['labels']["enabled"] = showBarLabels;
+    options["series"]['curveTension'] = seriesCurveTension;
+    options["series"]['fillOpacity'] = seriesFillOpacity;
+    options["series"]['lineWidth'] = seriesLineWidth;
+    options["series"]['labels']  = new Map<String, dynamic>();
+    options["series"]['labels']["enabled"] = showLineLabels;
     options["series"]['labels']["style"] = new Map<String, dynamic>();
-    options["series"]['labels']["style"]["fontFamily"] = xAxisLabelFontFamily;
-    options["series"]['labels']["style"]["fontSize"] = barLabelFontSize;
-    options["series"]['labels']["style"]["fontStyle"] = barLabelFontStyle;
-    options["series"]['labels']["style"]["color"] = barLabelColor;
+    options["series"]['labels']["style"]["fontFamily"] = xAxisLabelsFontFamily;
+    options["series"]['labels']["style"]["fontSize"] = lineLabelFontSize;
+    options["series"]['labels']["style"]["fontStyle"] = lineLabelFontStyle;
+    options["series"]['labels']["style"]["color"] = lineLabelColor;
+    options["series"]["markers"] = new Map<String,dynamic>();
+    options["series"]["markers"]['enabled']  = showMarkers;
+    options["series"]["markers"]['fillColor'] = markerFillColor;
+    options["series"]["markers"]['lineWidth'] = markerLineWidth;
+    options["series"]["markers"]['strokeColor'] = markerStrokeColor;
+    options["series"]["markers"]['size'] = markerSize;
+
     options["xAxis"] = new Map<String, dynamic>();
-    options["xAxis"]['crosshair'] = new Map<String, dynamic>();
-    options["xAxis"]['crosshair']['color'] = crosshairRgbaColor;
-    options["xAxis"]['crosshair']['enabled'] = crosshairEnabled;
     options["xAxis"]['gridLineColor'] = horisontalGridLineColor;
     options["xAxis"]['gridLineWidth'] = horisontalGridLineWidth;
     options["xAxis"]['lineColor'] = xAxisColor;
     options["xAxis"]['lineWidth'] = xAxisLineWidth;
+
     options["xAxis"]['labels']  = new Map<String, dynamic>();
     options["xAxis"]['labels']['maxRotation'] = xAxisLabelMaxRotation;
     options["xAxis"]['labels']['minRotation'] = xAxisLabelMinRotation;
     options["xAxis"]['labels']['style'] = new Map<String, dynamic>();
     options["xAxis"]['labels']['style']['color'] = xAxisLabelColor;
-    options["xAxis"]['labels']['style']['fontFamily'] = xAxisLabelFontFamily;
+    options["xAxis"]['labels']['style']['fontFamily'] = xAxisLabelsFontFamily;
     options["xAxis"]['labels']['style']['fontSize'] = xAxisLabelFontSize;
     options["xAxis"]['labels']['style']['fontStyle'] = xAxisLabelsFontStyle;
+
+
     options["xAxis"]['position'] = 'bottom'; //only bottom supported
     options["xAxis"]['title'] = new Map<String, dynamic>();
     options["xAxis"]['title']['style'] = new Map<String, dynamic>();
@@ -43,6 +53,7 @@ class BarChartProperties
     options["yAxis"]['gridLineColor'] = verticalGridLineColor;
     options["yAxis"]['gridLineWidth'] = verticalGridLineWidth;
     options["yAxis"]['lineColor'] = yAxisColor;
+    options["yAxis"]['lineWidth'] = yAxisLineWidth;
     options["yAxis"]['interval'] = yAxisInterval;
     options["yAxis"]['labels'] = new Map<String, dynamic>();
     options["yAxis"]['labels']['formatter'] = null;
@@ -62,13 +73,25 @@ class BarChartProperties
     options["yAxis"]['title']['style']['fontFamily'] = yAxisTitleFontFamily;
     options["yAxis"]['title']['style']['fontSize'] = yAxisTitleFontSize;
     options["yAxis"]['title']['style']['fontStyle'] = yAxisTitleFontStyle;
+
     return options;
   }
 
 
-  String barLabelColor = "#212121";
-  String barLabelFontStyle = 'normal';
-  int barLabelFontSize = 15;
+  num seriesCurveTension = .4;
+  num  seriesFillOpacity = .25;
+  num  seriesLineWidth = 2;
+  String lineLabelColor = "#212121";
+  String lineLabelFontStyle = 'normal';
+  num lineLabelFontSize = 15;
+
+  bool showMarkers = true;
+  String markerFillColor = null;
+  num markerLineWidth = 1;
+  String markerStrokeColor = 'white';
+  num markerSize = 4;
+
+
   String chartTitle = null;
   String chartTitleColor = '#212121';
   String chartTitleFontFamily = '"Segoe UI", "Open Sans", Verdana, Arial';
@@ -81,12 +104,12 @@ class BarChartProperties
   String horisontalGridLineColor = '#c0c0c0';
   String verticalGridLineColor = '#c0c0c0';
   int verticalGridLineWidth = 1;
-  bool showBarLabels = true;
+  bool showLineLabels = true;
 
 
   String xAxisColor = '#c0c0c0';
   String xAxisLabelColor = '#212121';
-  String xAxisLabelFontFamily = '"Segoe UI", "Open Sans", Verdana, Arial';
+  String xAxisLabelsFontFamily = '"Segoe UI", "Open Sans", Verdana, Arial';
   String xAxisLabelsFontStyle = 'normal';
   int xAxisLabelFontSize = 15;
   int xAxisLabelMaxRotation = 0;

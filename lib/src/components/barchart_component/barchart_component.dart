@@ -7,34 +7,29 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     styleUrls: const ['barchart_component.css'],
     templateUrl: 'barchart_component.html'
 )
-class BarChartComponent implements AfterViewInit, OnChanges, AfterContentInit
+class BarChartComponent implements AfterViewInit, OnChanges
 {
   void ngAfterViewInit()
   {
     chartRef.nativeElement.style.height = chartProperties.height;
     _chart = new BarChart(chartRef.nativeElement);
-    if (dataTable != null && _chart != null && chartProperties != null) _chart.draw(dataTable , chartProperties.encoded);
+    _chart.draw(chartData.encoded , chartProperties.encoded);
   }
 
   ngOnChanges(Map<String, SimpleChange> changes)
   {
-    if (dataTable != null && _chart != null && chartProperties != null) _chart.draw(dataTable, chartProperties.encoded);
+    if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
-  ngAfterContentInit()
-  {
-    if (dataTable != null && _chart != null && chartProperties != null)
-    {
-      _chart.draw(dataTable, chartProperties.encoded);
-    }
-  }
+
 
   BarChart _chart;
-  @Input('chartProperties')
-  BarChartProperties chartProperties;
 
-  @Input('dataTable')
-  DataTable dataTable;
+  @Input('chartProperties')
+  BarChartProperties chartProperties = new BarChartProperties("300px");
+
+  @Input('chartData')
+  BarChartData chartData = new BarChartData([], []);
 
   @ViewChild("chart")
   ElementRef chartRef;
