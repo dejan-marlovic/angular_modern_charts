@@ -66,46 +66,45 @@ class BarChartProperties
   }
 
 
-  String barLabelColor = "#212121";
-  String barLabelFontStyle = 'normal';
-  int barLabelFontSize = 15;
-  String chartTitle = null;
-  String chartTitleColor = '#212121';
-  String chartTitleFontFamily = '"Segoe UI", "Open Sans", Verdana, Arial';
-  String chartTitleFontStyle = 'normal';
-  int chartTitleFontSize = 15;
-  bool crosshairEnabled = true;
-  String crosshairRgbaColor = 'rgba(0, 0, 0, .02)';
-  String height;
-  int horisontalGridLineWidth = 1;
-  String horisontalGridLineColor = '#c0c0c0';
-  String verticalGridLineColor = '#c0c0c0';
-  int verticalGridLineWidth = 1;
-  bool showBarLabels = true;
+  String	barLabelColor	=	'#212121';
+  num	barLabelFontSize	=	15;
+  String	barLabelFontStyle	=	'normal';
+  String	chartTitle	=	null;
+  String	chartTitleColor	=	'#212121';
+  String	chartTitleFontFamily	=	'"Segoe	UI",	Open Sans,	Verdana,	Arial';
+  num	chartTitleFontSize	=	15;
+  String	chartTitleFontStyle	=	'normal';
+  bool	crosshairEnabled	=	true;
+  String	crosshairRgbaColor	=	'rgba(0,	0,	0,	.02)';
+  String	height;
+  String	horisontalGridLineColor	=	'#c0c0c0';
+  num	horisontalGridLineWidth	=	1;
+  bool	showBarLabels	=	true;
+  String	verticalGridLineColor	=	'#c0c0c0';
+  num	verticalGridLineWidth	=	1;
 
+  String	xAxisColor	=	'#c0c0c0';
+  String	xAxisLabelColor	=	'#212121';
+  String	xAxisLabelFontFamily	=	'"Segoe	UI",	Open Sans,	Verdana,	Arial';
+  num	xAxisLabelFontSize	=	15;
+  num	xAxisLabelMaxRotation	=	0;
+  num	xAxisLabelMinRotation	=	-90;
+  String	xAxisLabelsFontStyle	=	'normal';
+  num	xAxisLineWidth	=	1;
 
-  String xAxisColor = '#c0c0c0';
-  String xAxisLabelColor = '#212121';
-  String xAxisLabelFontFamily = '"Segoe UI", "Open Sans", Verdana, Arial';
-  String xAxisLabelsFontStyle = 'normal';
-  int xAxisLabelFontSize = 15;
-  int xAxisLabelMaxRotation = 0;
-  int xAxisLabelMinRotation = -90;
-  int xAxisLineWidth = 1;
-
-  String yAxisColor = '#c0c0c0';
-  String yAxisLabelColor = '#212121';
-  String yAxisLabelsFontFamily = '"Segoe UI", "Open Sans", Verdana, Arial';
-  String yAxisLabelsFontStyle = "normal";
-  String yAxisTitle = null;
-  String yAxisTitleColor = '#212121';
-  String yAxisTitleFontFamily = '"Segoe UI", "Open Sans", Verdana, Arial';
-  String yAxisTitleFontStyle = 'normal';
-  double yAxisMinInterval = null;
-  int yAxisInterval = null;
-  int yAxisLabelsFontSize = 15;
-  int yAxisLineWidth = 0;
-  int yAxisMaxValue = null;
-  int yAxisMinValue = null;
-  int yAxisTitleFontSize = 20;
+  String	yAxisColor	=	'#c0c0c0';
+  num	yAxisInterval	=	null;
+  String	yAxisLabelColor	=	'#212121';
+  String	yAxisLabelsFontFamily	=	'"Segoe	UI",	Open Sans,	Verdana,	Arial';
+  num	yAxisLabelsFontSize	=	15;
+  String	yAxisLabelsFontStyle	=	'normal';
+  num	yAxisLineWidth	=	0;
+  num	yAxisMaxValue	=	null;
+  num	yAxisMinInterval	=	null;
+  num	yAxisMinValue	=	null;
+  String	yAxisTitle	=	null;
+  String	yAxisTitleColor	=	'#212121';
+  String	yAxisTitleFontFamily	=	'"Segoe	UI",	Open Sans,	Verdana,	Arial';
+  num	yAxisTitleFontSize	=	20;
+  String	yAxisTitleFontStyle	=	'normal';
 }

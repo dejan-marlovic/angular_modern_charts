@@ -8,3 +8,5 @@ export 'src/models/barchart_properties.dart';
 export 'src/models/barchart_data.dart';
 export 'src/models/linechart_properties.dart';
 export 'src/models/linechart_data.dart';
+export 'src/models/piechart_data.dart';
+export 'src/models/piechart_properties.dart';
