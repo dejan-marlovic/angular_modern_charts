@@ -21,8 +21,6 @@ class RadarChartComponent implements AfterViewInit, OnChanges
     if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
-
-
   RadarChart _chart;
 
   @Input('chartProperties')

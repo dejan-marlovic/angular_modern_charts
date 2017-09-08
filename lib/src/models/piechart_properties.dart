@@ -1,11 +1,9 @@
 class PieChartProperties
 {
-
   PieChartProperties(this.height);
 
   Map<String, dynamic> get encoded
   {
-
     Map<String, dynamic> options = new Map<String, dynamic>();
     // num - If between 0 and 1, displays a donut chart. The hole with have a
     // radius equal to this value times the radius of the chart.

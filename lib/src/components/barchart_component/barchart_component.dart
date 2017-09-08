@@ -21,8 +21,6 @@ class BarChartComponent implements AfterViewInit, OnChanges
     if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
-
-
   BarChart _chart;
 
   @Input('chartProperties')

@@ -1,6 +1,5 @@
 class BarChartProperties
 {
-
   BarChartProperties(this.height);
 
   Map<String, dynamic> get encoded
@@ -62,9 +61,9 @@ class BarChartProperties
     options["yAxis"]['title']['style']['fontFamily'] = yAxisTitleFontFamily;
     options["yAxis"]['title']['style']['fontSize'] = yAxisTitleFontSize;
     options["yAxis"]['title']['style']['fontStyle'] = yAxisTitleFontStyle;
+
     return options;
   }
-
 
   String	barLabelColor	=	'#212121';
   num	barLabelFontSize	=	15;

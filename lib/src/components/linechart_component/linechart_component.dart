@@ -22,8 +22,6 @@ class LineChartComponent implements AfterViewInit, OnChanges
     if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
-
-
   LineChart _chart;
 
   @Input('chartProperties')

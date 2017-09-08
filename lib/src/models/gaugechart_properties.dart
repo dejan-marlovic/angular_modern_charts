@@ -1,6 +1,5 @@
 class GaugeChartProperties
 {
-
   GaugeChartProperties(this.height);
 
   Map<String, dynamic> get encoded

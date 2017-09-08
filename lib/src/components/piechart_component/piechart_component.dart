@@ -21,8 +21,6 @@ class PieChartComponent implements AfterViewInit, OnChanges
     if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
-
-
   PieChart _chart;
 
   @Input('chartProperties')

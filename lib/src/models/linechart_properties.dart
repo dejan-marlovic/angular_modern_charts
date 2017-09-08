@@ -1,6 +1,5 @@
 class LineChartProperties
 {
-
   LineChartProperties(this.height);
 
   Map<String, dynamic> get encoded
@@ -29,7 +28,6 @@ class LineChartProperties
     options["xAxis"]['gridLineWidth'] = horisontalGridLineWidth;
     options["xAxis"]['lineColor'] = xAxisColor;
     options["xAxis"]['lineWidth'] = xAxisLineWidth;
-
     options["xAxis"]['labels']  = new Map<String, dynamic>();
     options["xAxis"]['labels']['maxRotation'] = xAxisLabelMaxRotation;
     options["xAxis"]['labels']['minRotation'] = xAxisLabelMinRotation;
@@ -38,8 +36,6 @@ class LineChartProperties
     options["xAxis"]['labels']['style']['fontFamily'] = xAxisLabelsFontFamily;
     options["xAxis"]['labels']['style']['fontSize'] = xAxisLabelFontSize;
     options["xAxis"]['labels']['style']['fontStyle'] = xAxisLabelsFontStyle;
-
-
     options["xAxis"]['position'] = 'bottom'; //only bottom supported
     options["xAxis"]['title'] = new Map<String, dynamic>();
     options["xAxis"]['title']['style'] = new Map<String, dynamic>();

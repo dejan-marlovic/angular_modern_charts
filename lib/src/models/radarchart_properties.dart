@@ -1,6 +1,5 @@
 class RadarChartProperties
 {
-
   RadarChartProperties(this.height);
 
   Map<String, dynamic> get encoded
@@ -26,7 +25,6 @@ class RadarChartProperties
     options["xAxis"] = new Map<String, dynamic>();
     options["xAxis"]['gridLineWidth'] = frameworkLineWidth;
     options["xAxis"]['gridLineColor'] = frameworkLineColor;
-
     options["xAxis"]['labels']  = new Map<String, dynamic>();
     options["xAxis"]['labels']['style'] = new Map<String, dynamic>();
     options["xAxis"]['labels']['style']['color'] = radialLabelsColor;
