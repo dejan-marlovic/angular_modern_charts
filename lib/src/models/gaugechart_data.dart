@@ -1,12 +1,12 @@
 import 'package:modern_charts/modern_charts.dart';
 
-class PieChartData
+class GaugeChartData
 {
-  PieChartData(this._categories, this._columns)
+  GaugeChartData(this._categories, this._columns)
   {
-    for(PieChartColumnData ColumnObject in _columns)
+    for(GaugeChartColumnData ColumnObject in _columns)
     {
-      if (ColumnObject._data.length + 1 != _categories.length) throw new StateError('Supplay one value for each category or segment!');
+      if (ColumnObject._data.length + 1 != _categories.length) throw new StateError('Supplay one value for each category or segment');
     }
   }
 
@@ -18,13 +18,13 @@ class PieChartData
     return new DataTable(output);
   }
 
-  final List<PieChartColumnData> _columns;
+  final List<GaugeChartColumnData> _columns;
   final List<String> _categories;
 }
 
-class PieChartColumnData
+class GaugeChartColumnData
 {
-  PieChartColumnData(this._name, this._data);
+  GaugeChartColumnData(this._name, this._data);
 
   List<dynamic> get encoded
   {

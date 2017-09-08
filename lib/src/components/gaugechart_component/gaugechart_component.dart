@@ -3,16 +3,16 @@ import 'package:modern_charts/modern_charts.dart';
 import 'package:angular_modern_charts/angular_modern_charts.dart';
 
 @Component(
-    selector: 'radarchart',
-    styleUrls: const ['radarchart_component.css'],
-    templateUrl: 'radarchart_component.html'
+    selector: 'gaugechart',
+    styleUrls: const ['gaugechart_component.css'],
+    templateUrl: 'gaugechart_component.html'
 )
-class RadarChartComponent implements AfterViewInit, OnChanges
+class GaugeChartComponent implements AfterViewInit, OnChanges
 {
   void ngAfterViewInit()
   {
     chartRef.nativeElement.style.height = chartProperties.height;
-    _chart = new RadarChart(chartRef.nativeElement);
+    _chart = new GaugeChart(chartRef.nativeElement);
     _chart.draw(chartData.encoded , chartProperties.encoded);
   }
 
@@ -21,15 +21,13 @@ class RadarChartComponent implements AfterViewInit, OnChanges
     if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
-
-
-  RadarChart _chart;
+  GaugeChart _chart;
 
   @Input('chartProperties')
-  RadarChartProperties chartProperties = new RadarChartProperties("300px");
+  GaugeChartProperties chartProperties = new GaugeChartProperties("300px");
 
   @Input('chartData')
-  RadarChartData chartData = new RadarChartData([], []);
+  GaugeChartData chartData = new GaugeChartData([], []);
 
   @ViewChild("chart")
   ElementRef chartRef;

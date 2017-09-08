@@ -1,13 +1,14 @@
 import 'package:modern_charts/modern_charts.dart';
 
-class PieChartData
+class RadarChartData
 {
-  PieChartData(this._categories, this._columns)
+  RadarChartData(this._categories, this._columns)
   {
-    for(PieChartColumnData ColumnObject in _columns)
+    for(RadarChartColumnData ColumnObject in _columns)
     {
-      if (ColumnObject._data.length + 1 != _categories.length) throw new StateError('Supplay one value for each category or segment!');
+      if (ColumnObject._data.length != _categories.length) throw new StateError('Each column has to contain same number of values as there are categories. Supplay null value if data is missing for a category!');
     }
+    _categories.insert(0, "Categories");
   }
 
   DataTable get encoded
@@ -18,13 +19,13 @@ class PieChartData
     return new DataTable(output);
   }
 
-  final List<PieChartColumnData> _columns;
+  final List<RadarChartColumnData> _columns;
   final List<String> _categories;
 }
 
-class PieChartColumnData
+class RadarChartColumnData
 {
-  PieChartColumnData(this._name, this._data);
+  RadarChartColumnData(this._name, this._data);
 
   List<dynamic> get encoded
   {
