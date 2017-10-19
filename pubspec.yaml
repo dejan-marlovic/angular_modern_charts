@@ -1,21 +1,21 @@
 name: angular_modern_charts
 description: Angular wrapper for the modern_charts library
-version: 0.0.15
+version: 0.0.18
 homepage: https://www.example.com
 author: Dejan Marlovic <dMarlovic83@gmail.com>
 
 environment:
   sdk: '>=1.24.0 <2.0.0'
 dependencies:
-  angular: ^4.0.0-beta
-  angular_components: ^0.6.0-beta
-  modern_charts: ^0.1.11
+  angular: ^4.0.0
+  angular_components: ^0.8.0
+  modern_charts: ^0.1.12
+  sass_builder: ^1.0.1
 dev_dependencies:
   browser: ^0.10.0
-# Uncomment the following in sdk 1.24+ to make pub serve
-# use dartdevc (webdev.dartlang.org/tools/dartdevc).
-#web:
-#  compiler:
-#    debug: dartdevc
+web:
+  compiler:
+    debug: dartdevc
 transformers:
   - angular
+  - sass_builder
