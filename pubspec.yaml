@@ -13,9 +13,8 @@ dependencies:
   sass_builder: ^1.0.1
 dev_dependencies:
   browser: ^0.10.0
-web:
-  compiler:
-    debug: dartdevc
+
 transformers:
-  - angular
-  - sass_builder
+- sass_builder:
+      outputExtension: .scss.css
+- angular  
