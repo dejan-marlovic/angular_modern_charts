@@ -4,7 +4,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
 
 @Component(
     selector: 'piechart',
-    styleUrls: const ['piechart_component.css'],
+    styleUrls: const ['piechart_component.scss.css'],
     templateUrl: 'piechart_component.html'
 )
 class PieChartComponent implements AfterViewInit, OnChanges
