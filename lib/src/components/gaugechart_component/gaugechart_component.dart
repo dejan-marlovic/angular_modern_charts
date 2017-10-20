@@ -4,7 +4,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
 
 @Component(
     selector: 'gaugechart',
-    styleUrls: const ['gaugechart_component.css'],
+    styleUrls: const ['gaugechart_component.scss.css'],
     templateUrl: 'gaugechart_component.html'
 )
 class GaugeChartComponent implements AfterViewInit, OnChanges

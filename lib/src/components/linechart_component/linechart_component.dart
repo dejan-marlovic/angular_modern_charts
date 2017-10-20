@@ -4,7 +4,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
 
 @Component(
     selector: 'linechart',
-    styleUrls: const ['linechart_component.css'],
+    styleUrls: const ['linechart_component.scss.css'],
     templateUrl: 'linechart_component.html'
 )
 class LineChartComponent implements AfterViewInit, OnChanges

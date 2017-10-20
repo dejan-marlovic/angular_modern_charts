@@ -4,7 +4,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
 
 @Component(
     selector: 'barchart',
-    styleUrls: const ['barchart_component.css'],
+    styleUrls: const ['barchart_component.scss.css'],
     templateUrl: 'barchart_component.html'
 )
 class BarChartComponent implements AfterViewInit, OnChanges
