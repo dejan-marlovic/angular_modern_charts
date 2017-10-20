@@ -1,9 +1,8 @@
 name: angular_modern_charts
 description: Angular wrapper for the modern_charts library
-version: 0.0.18
+version: 0.0.19
 homepage: https://www.example.com
 author: Dejan Marlovic <dMarlovic83@gmail.com>
-
 environment:
   sdk: '>=1.24.0 <2.0.0'
 dependencies:
@@ -13,8 +12,7 @@ dependencies:
   sass_builder: ^1.0.1
 dev_dependencies:
   browser: ^0.10.0
-
 transformers:
 - sass_builder:
-      outputExtension: .scss.css
-- angular  
+    outputExtension: .scss.css
+- angular

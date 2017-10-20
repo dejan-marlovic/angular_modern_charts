@@ -4,7 +4,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
 
 @Component(
     selector: 'radarchart',
-    styleUrls: const ['radarchart_component.css'],
+    styleUrls: const ['radarchart_component.scss.css'],
     templateUrl: 'radarchart_component.html'
 )
 class RadarChartComponent implements AfterViewInit, OnChanges
