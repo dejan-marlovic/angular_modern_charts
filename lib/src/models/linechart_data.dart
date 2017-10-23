@@ -4,9 +4,9 @@ class LineChartData
 {
   LineChartData(this._categories, this._columns)
   {
-    for(LineChartColumnData ColumnObject in _columns)
+    for (LineChartColumnData ColumnObject in _columns)
     {
-      if (ColumnObject._data.length != _categories.length) throw new StateError('Each column has to contain same number of values as there are categories. Supplay null value if data is missing for a category!');
+      if (ColumnObject._data.length != _categories.length) throw new StateError('Each column has to contain same number of values as there are categories. Supply null value if data is missing for a category!');
     }
     _categories.insert(0, "Categories");
   }

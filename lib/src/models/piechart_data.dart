@@ -2,24 +2,18 @@ import 'package:modern_charts/modern_charts.dart';
 
 class PieChartData
 {
-  PieChartData(this._categories, this._columns)
-  {
-    for(PieChartColumnData ColumnObject in _columns)
-    {
-      if (ColumnObject._data.length + 1 != _categories.length) throw new StateError('Supplay one value for each category or segment!');
-    }
-  }
+  PieChartData(this._label, this._columns);
 
   DataTable get encoded
   {
     List<List <dynamic>> output = new List();
-    output.add(_categories);
+    output.add([_label, "share"]);
     output.addAll(_columns.map((column) => column.encoded));
     return new DataTable(output);
   }
 
   final List<PieChartColumnData> _columns;
-  final List<String> _categories;
+  final String _label;
 }
 
 class PieChartColumnData

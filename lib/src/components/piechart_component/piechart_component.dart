@@ -13,12 +13,11 @@ class PieChartComponent implements AfterViewInit, OnChanges
   {
     chartRef.nativeElement.style.height = chartProperties.height;
     _chart = new PieChart(chartRef.nativeElement);
-    _chart.draw(chartData.encoded , chartProperties.encoded);
   }
 
   ngOnChanges(Map<String, SimpleChange> changes)
   {
-    if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
+    if (_chart != null && chartData != null) _chart.draw(chartData.encoded);
   }
 
   PieChart _chart;
@@ -27,7 +26,7 @@ class PieChartComponent implements AfterViewInit, OnChanges
   PieChartProperties chartProperties = new PieChartProperties("300px");
 
   @Input('chartData')
-  PieChartData chartData = new PieChartData([], []);
+  PieChartData chartData;
 
   @ViewChild("chart")
   ElementRef chartRef;
