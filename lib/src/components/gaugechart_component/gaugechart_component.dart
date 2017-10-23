@@ -13,7 +13,6 @@ class GaugeChartComponent implements AfterViewInit, OnChanges
   {
     chartRef.nativeElement.style.height = chartProperties.height;
     _chart = new GaugeChart(chartRef.nativeElement);
-    _chart.draw(chartData.encoded , chartProperties.encoded);
   }
 
   ngOnChanges(Map<String, SimpleChange> changes)
@@ -27,7 +26,7 @@ class GaugeChartComponent implements AfterViewInit, OnChanges
   GaugeChartProperties chartProperties = new GaugeChartProperties("300px");
 
   @Input('chartData')
-  GaugeChartData chartData = new GaugeChartData([], []);
+  GaugeChartData chartData;
 
   @ViewChild("chart")
   ElementRef chartRef;

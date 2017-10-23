@@ -13,13 +13,11 @@ class LineChartComponent implements AfterViewInit, OnChanges
   {
     chartRef.nativeElement.style.height = chartProperties.height;
     _chart = new LineChart(chartRef.nativeElement);
-    _chart.draw(chartData.encoded , chartProperties.encoded);
   }
 
   ngOnChanges(Map<String, SimpleChange> changes)
   {
-    if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
-    print(chartProperties.encoded);
+    if (_chart != null && chartData != null) _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
   LineChart _chart;

@@ -13,7 +13,6 @@ class BarChartComponent implements AfterViewInit, OnChanges
   {
     chartRef.nativeElement.style.height = chartProperties.height;
     _chart = new BarChart(chartRef.nativeElement);
-    _chart.draw(chartData.encoded , chartProperties.encoded);
   }
 
   ngOnChanges(Map<String, SimpleChange> changes)
