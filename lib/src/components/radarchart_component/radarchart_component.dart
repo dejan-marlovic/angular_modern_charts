@@ -11,7 +11,6 @@ class RadarChartComponent implements AfterViewInit, OnChanges
 {
   void ngAfterViewInit()
   {
-    chartRef.nativeElement.style.height = chartProperties.height;
     _chart = new RadarChart(chartRef.nativeElement);
   }
 

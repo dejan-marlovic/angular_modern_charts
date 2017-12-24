@@ -11,7 +11,6 @@ class GaugeChartComponent implements AfterViewInit, OnChanges
 {
   void ngAfterViewInit()
   {
-    chartRef.nativeElement.style.height = chartProperties.height;
     _chart = new GaugeChart(chartRef.nativeElement);
   }
 

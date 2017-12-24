@@ -11,7 +11,6 @@ class PieChartComponent implements AfterViewInit, OnChanges
 {
   void ngAfterViewInit()
   {
-    chartRef.nativeElement.style.height = chartProperties.height;
     _chart = new PieChart(chartRef.nativeElement);
   }
 
