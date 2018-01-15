@@ -7,7 +7,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     styleUrls: const ['linechart_component.scss.css'],
     templateUrl: 'linechart_component.html'
 )
-class LineChartComponent implements AfterViewInit, OnChanges
+class LineChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {
   void ngAfterViewInit()
   {
@@ -17,6 +17,11 @@ class LineChartComponent implements AfterViewInit, OnChanges
   ngOnChanges(Map<String, SimpleChange> changes)
   {
     if (_chart != null && chartData != null) _chart.draw(chartData.encoded, chartProperties.encoded);
+  }
+
+  void ngOnDestroy()
+  {
+    _chart.free();
   }
 
   LineChart _chart;

@@ -7,7 +7,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     styleUrls: const ['barchart_component.scss.css'],
     templateUrl: 'barchart_component.html'
 )
-class BarChartComponent implements AfterViewInit, OnChanges
+class BarChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {
   void ngAfterViewInit()
   {
@@ -17,6 +17,11 @@ class BarChartComponent implements AfterViewInit, OnChanges
   ngOnChanges(Map<String, SimpleChange> changes)
   {
     if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
+  }
+
+  void ngOnDestroy()
+  {
+    _chart.free();
   }
 
   BarChart _chart;

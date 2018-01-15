@@ -7,7 +7,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     styleUrls: const ['radarchart_component.scss.css'],
     templateUrl: 'radarchart_component.html'
 )
-class RadarChartComponent implements AfterViewInit, OnChanges
+class RadarChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {
   void ngAfterViewInit()
   {
@@ -17,6 +17,11 @@ class RadarChartComponent implements AfterViewInit, OnChanges
   ngOnChanges(Map<String, SimpleChange> changes)
   {
     if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
+  }
+
+  void ngOnDestroy()
+  {
+    _chart.free();
   }
 
   RadarChart _chart;

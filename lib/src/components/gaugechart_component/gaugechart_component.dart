@@ -7,7 +7,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     styleUrls: const ['gaugechart_component.scss.css'],
     templateUrl: 'gaugechart_component.html'
 )
-class GaugeChartComponent implements AfterViewInit, OnChanges
+class GaugeChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {
   void ngAfterViewInit()
   {
@@ -17,6 +17,11 @@ class GaugeChartComponent implements AfterViewInit, OnChanges
   ngOnChanges(Map<String, SimpleChange> changes)
   {
     if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
+  }
+
+  void ngOnDestroy()
+  {
+    _chart.free();
   }
 
   GaugeChart _chart;
