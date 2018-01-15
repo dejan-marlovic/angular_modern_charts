@@ -1,12 +1,12 @@
 name: angular_modern_charts
 description: Angular wrapper for the modern_charts library
-version: 0.0.19
+version: 0.0.20
 homepage: https://www.example.com
 author: Dejan Marlovic <dMarlovic83@gmail.com>
 environment:
   sdk: '>=1.24.2 <2.0.0'
 dependencies:
-  angular: ^4.0.0
+  angular: ^4.0.0+2
   angular_components: ^0.8.0
   modern_charts:
     git: https://github.com/afpatmin/modern_charts.git
