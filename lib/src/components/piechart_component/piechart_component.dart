@@ -7,7 +7,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     styleUrls: const ['piechart_component.scss.css'],
     templateUrl: 'piechart_component.html'
 )
-class PieChartComponent implements AfterViewInit, OnChanges
+class PieChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {
   void ngAfterViewInit()
   {
@@ -17,6 +17,11 @@ class PieChartComponent implements AfterViewInit, OnChanges
   ngOnChanges(Map<String, SimpleChange> changes)
   {
     if (_chart != null && chartData != null) _chart.draw(chartData.encoded);
+  }
+
+  void ngOnDestroy()
+  {
+    _chart.free();
   }
 
   PieChart _chart;
