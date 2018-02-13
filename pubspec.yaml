@@ -11,14 +11,5 @@ dependencies:
   angular: ^5.0.0-alpha+5
   angular_components: ^0.9.0-alpha+4
   modern_charts:
+    git: https://www.github.com/afpatmin/modern_charts
   sass_builder: ^1.1.2
-dev_dependencies:
-  browser: ^0.10.0
-
-dependency_overrides:
-  analyzer: ^0.31.0-alpha.2
-
-transformers:
-- sass_builder:
-    outputExtension: .scss.css
-- angular
