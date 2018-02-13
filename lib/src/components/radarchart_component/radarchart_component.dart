@@ -1,18 +1,20 @@
+import 'dart:html' as html;
 import 'package:angular/angular.dart';
 import 'package:modern_charts/modern_charts.dart';
 import 'package:angular_modern_charts/angular_modern_charts.dart';
 
 @Component(
     selector: 'radarchart',
-    styleUrls: const ['radarchart_component.scss.css'],
+    styleUrls: const ['radarchart_component.css'],
     templateUrl: 'radarchart_component.html'
 )
-class RadarChartComponent implements AfterViewInit, OnChanges
+class RadarChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {
+  RadarChartComponent(this._hostElement);
+
   void ngAfterViewInit()
   {
-    chartRef.nativeElement.style.height = chartProperties.height;
-    _chart = new RadarChart(chartRef.nativeElement);
+    _chart = new RadarChart(_hostElement.querySelector('#chart'));
   }
 
   ngOnChanges(Map<String, SimpleChange> changes)
@@ -20,16 +22,21 @@ class RadarChartComponent implements AfterViewInit, OnChanges
     if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
-  RadarChart _chart;
+  void ngOnDestroy()
+  {
+    _chart.free();
+  }
 
-  @Input('chartProperties')
+  RadarChart _chart;
+  final html.Element _hostElement;
+
+  @Input()
+  bool loading = false;
+
+  @Input()
   RadarChartProperties chartProperties = new RadarChartProperties("300px");
 
-  @Input('chartData')
+  @Input()
   RadarChartData chartData = new RadarChartData([], []);
-
-  @ViewChild("chart")
-  ElementRef chartRef;
-
 }
 
