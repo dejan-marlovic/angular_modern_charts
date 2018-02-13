@@ -1,1 +1,3 @@
-<div #chart [style.height]="chartProperties.height"></div>
+<div id="chart" [style.height]="chartProperties.height">
+    <p *ngIf="loading" class="text-center">Loading ...</p>
+</div>
