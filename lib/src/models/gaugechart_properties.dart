@@ -1,21 +1,18 @@
-class GaugeChartProperties
-{
+class GaugeChartProperties {
   GaugeChartProperties(this.height);
 
-  Map<String, dynamic> get encoded
-  {
-
-    Map<String, dynamic> options = new Map<String, dynamic>();
+  Map<String, dynamic> get encoded {
+    final options = {};
     // num - If between 0 and 1, displays a donut chart. The hole with have a
     // radius equal to this value times the radius of the chart.
-    options["gaugeBackgroundColor"] = gaugeBackgroundColor;
-    options["gaugeLabels"] = new Map<String, dynamic>();
-    options["gaugeLabels"]['enabled'] = showSeriesLabels;
-    options["gaugeLabels"]['style']  = new Map<String, dynamic>();
-    options["gaugeLabels"]['style']["color"] = gaugeLabelsColor;
-    options["gaugeLabels"]["style"]["fontFamily"] = seriesLabelsFontFamily;
-    options["gaugeLabels"]["style"]["fontSize"] = seriesLabelFontSize;
-    options["gaugeLabels"]["style"]["fontStyle"] = seriesLabelFontStyle;
+    options['gaugeBackgroundColor'] = gaugeBackgroundColor;
+    options['gaugeLabels'] = {};
+    options['gaugeLabels']['enabled'] = showSeriesLabels;
+    options['gaugeLabels']['style'] = {};
+    options['gaugeLabels']['style']['color'] = gaugeLabelsColor;
+    options['gaugeLabels']['style']['fontFamily'] = seriesLabelsFontFamily;
+    options['gaugeLabels']['style']['fontSize'] = seriesLabelFontSize;
+    options['gaugeLabels']['style']['fontStyle'] = seriesLabelFontStyle;
 
     return options;
   }
@@ -24,7 +21,7 @@ class GaugeChartProperties
   String height;
   num gaugeHole = 0;
   String gaugeBackgroundColor = '#dbdbdb';
-  String seriesLabelsFontFamily = '"Segoe UI", Open Sans, Verdana, Arial';
+  String seriesLabelsFontFamily = "'Segoe UI', Open Sans, Verdana, Arial'";
   String seriesLabelFontStyle = 'normal';
   num seriesLabelFontSize = 15;
   String gaugeLabelsColor = '#212121';

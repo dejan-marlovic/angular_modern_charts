@@ -8,22 +8,23 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     styleUrls: const ['radarchart_component.css'],
     templateUrl: 'radarchart_component.html'
 )
-class RadarChartComponent implements AfterViewInit, OnChanges, OnDestroy
-{
+class RadarChartComponent
+    implements AfterViewInit, OnChanges, OnDestroy {
   RadarChartComponent(this._hostElement);
 
-  void ngAfterViewInit()
-  {
+  @override
+  void ngAfterViewInit() {
     _chart = new RadarChart(_hostElement.querySelector('#chart'));
   }
 
-  ngOnChanges(Map<String, SimpleChange> changes)
-  {
-    if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
+  @override
+  void ngOnChanges(Map<String, SimpleChange> changes) {
+    if (_chart != null)
+      _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
-  void ngOnDestroy()
-  {
+  @override
+  void ngOnDestroy() {
     _chart.free();
   }
 
@@ -34,7 +35,7 @@ class RadarChartComponent implements AfterViewInit, OnChanges, OnDestroy
   bool loading = false;
 
   @Input()
-  RadarChartProperties chartProperties = new RadarChartProperties("300px");
+  RadarChartProperties chartProperties = new RadarChartProperties('300px');
 
   @Input()
   RadarChartData chartData = new RadarChartData([], []);

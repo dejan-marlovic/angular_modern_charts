@@ -8,22 +8,23 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     styleUrls: const ['linechart_component.css'],
     templateUrl: 'linechart_component.html'
 )
-class LineChartComponent implements AfterViewInit, OnChanges, OnDestroy
-{
+class LineChartComponent
+    implements AfterViewInit, OnChanges, OnDestroy {
   LineChartComponent(this._hostElement);
 
-  void ngAfterViewInit()
-  {
+  @override
+  void ngAfterViewInit() {
     _chart = new LineChart(_hostElement.querySelector('#chart'));
   }
 
-  ngOnChanges(Map<String, SimpleChange> changes)
-  {
-    if (_chart != null && chartData != null) _chart.draw(chartData.encoded, chartProperties.encoded);
+  @override
+  void ngOnChanges(Map<String, SimpleChange> changes) {
+    if (_chart != null && chartData != null)
+      _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
-  void ngOnDestroy()
-  {
+  @override
+  void ngOnDestroy() {
     _chart.free();
   }
 
@@ -34,7 +35,7 @@ class LineChartComponent implements AfterViewInit, OnChanges, OnDestroy
   bool loading = false;
 
   @Input()
-  LineChartProperties chartProperties = new LineChartProperties("300px");
+  LineChartProperties chartProperties = new LineChartProperties('300px');
 
   @Input()
   LineChartData chartData = new LineChartData([], []);

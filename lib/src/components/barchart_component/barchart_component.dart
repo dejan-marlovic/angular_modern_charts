@@ -8,22 +8,23 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     styleUrls: const ['barchart_component.css'],
     templateUrl: 'barchart_component.html'
 )
-class BarChartComponent implements AfterViewInit, OnChanges, OnDestroy
-{
+class BarChartComponent
+    implements AfterViewInit, OnChanges, OnDestroy {
   BarChartComponent(this._hostElement);
 
-  void ngAfterViewInit()
-  {
+  @override
+  void ngAfterViewInit() {
     _chart = new BarChart(_hostElement.querySelector('#chart'));
   }
 
-  ngOnChanges(Map<String, SimpleChange> changes)
-  {
-    if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
+  @override
+  void ngOnChanges(Map<String, SimpleChange> changes) {
+    if (_chart != null)
+      _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
-  void ngOnDestroy()
-  {
+  @override
+  void ngOnDestroy() {
     _chart.free();
   }
 
@@ -34,7 +35,7 @@ class BarChartComponent implements AfterViewInit, OnChanges, OnDestroy
   bool loading = false;
 
   @Input()
-  BarChartProperties chartProperties = new BarChartProperties("300px");
+  BarChartProperties chartProperties = new BarChartProperties('300px');
 
   @Input()
   BarChartData chartData = new BarChartData([], []);

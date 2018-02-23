@@ -8,22 +8,23 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     styleUrls: const ['piechart_component.css'],
     templateUrl: 'piechart_component.html'
 )
-class PieChartComponent implements AfterViewInit, OnChanges, OnDestroy
-{
+class PieChartComponent
+    implements AfterViewInit, OnChanges, OnDestroy {
   PieChartComponent(this._hostElement);
 
-  void ngAfterViewInit()
-  {
+  @override
+  void ngAfterViewInit() {
     _chart = new PieChart(_hostElement.querySelector('#chart'));
   }
 
-  ngOnChanges(Map<String, SimpleChange> changes)
-  {
-    if (_chart != null && chartData != null) _chart.draw(chartData.encoded);
+  @override
+  void ngOnChanges(Map<String, SimpleChange> changes) {
+    if (_chart != null && chartData != null)
+      _chart.draw(chartData.encoded);
   }
 
-  void ngOnDestroy()
-  {
+  @override
+  void ngOnDestroy() {
     _chart.free();
   }
 
@@ -34,7 +35,7 @@ class PieChartComponent implements AfterViewInit, OnChanges, OnDestroy
   bool loading = false;
 
   @Input()
-  PieChartProperties chartProperties = new PieChartProperties("300px");
+  PieChartProperties chartProperties = new PieChartProperties('300px');
 
   @Input()
   PieChartData chartData;
