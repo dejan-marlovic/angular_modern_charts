@@ -6,22 +6,26 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
 @Component(
     selector: 'gaugechart',
     styleUrls: const ['gaugechart_component.css'],
-    templateUrl: 'gaugechart_component.html'
+    templateUrl: 'gaugechart_component.html',
+    directives: const [NgIf]
 )
 class GaugeChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {
   GaugeChartComponent(this._hostElement);
 
+  @override
   void ngAfterViewInit()
   {
     _chart = new GaugeChart(_hostElement.querySelector('#chart'));
   }
 
-  ngOnChanges(Map<String, SimpleChange> changes)
+  @override
+  void ngOnChanges(Map<String, SimpleChange> changes)
   {
     if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
   }
 
+  @override
   void ngOnDestroy()
   {
     _chart.free();
@@ -34,7 +38,7 @@ class GaugeChartComponent implements AfterViewInit, OnChanges, OnDestroy
   bool loading = false;
 
   @Input()
-  GaugeChartProperties chartProperties = new GaugeChartProperties("300px");
+  GaugeChartProperties chartProperties = new GaugeChartProperties('300px');
 
   @Input()
   GaugeChartData chartData;
