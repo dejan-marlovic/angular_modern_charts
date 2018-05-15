@@ -16,14 +16,15 @@ class PieChartComponent implements AfterViewInit, OnChanges, OnDestroy
   @override
   void ngAfterViewInit()
   {
+    print('viewInit');
     _chart = new PieChart(_hostElement.querySelector('#chart'));
   }
 
   @override
   void ngOnChanges(Map<String, SimpleChange> changes)
   {
-    if (_chart != null && chartData != null) {
-      print('changes');
+    print('changes');
+    if (_chart != null && chartData != null) {      
       _chart.draw(chartData.encoded, chartProperties.encoded);
     }
   }
