@@ -1,10 +1,8 @@
-analyzer:
-  strong-mode: true
+analyzer:  
   exclude:
     - .dart_tool
   plugins:
-    angular:
-      enabled: true
+    - angular      
   errors:
     uri_has_not_been_generated: ignore
 
