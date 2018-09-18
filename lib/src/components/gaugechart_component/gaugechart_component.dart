@@ -7,7 +7,8 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     selector: 'gaugechart',
     styleUrls: const ['gaugechart_component.css'],
     templateUrl: 'gaugechart_component.html',
-    directives: const [NgIf]
+    directives: const [NgIf],
+    changeDetection: ChangeDetectionStrategy.OnPush
 )
 class GaugeChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {

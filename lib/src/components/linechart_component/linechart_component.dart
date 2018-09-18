@@ -7,7 +7,8 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     selector: 'linechart',
     styleUrls: const ['linechart_component.css'],
     templateUrl: 'linechart_component.html',
-    directives: const [NgIf]
+    directives: const [NgIf],
+    changeDetection: ChangeDetectionStrategy.OnPush
 )
 class LineChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {

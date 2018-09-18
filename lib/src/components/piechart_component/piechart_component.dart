@@ -7,7 +7,8 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     selector: 'piechart',
     styleUrls: const ['piechart_component.css'],
     templateUrl: 'piechart_component.html',
-    directives: const [NgIf]
+    directives: const [NgIf],
+    changeDetection: ChangeDetectionStrategy.OnPush
 )
 class PieChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {

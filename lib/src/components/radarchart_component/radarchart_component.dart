@@ -7,7 +7,8 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     selector: 'radarchart',
     styleUrls: const ['radarchart_component.css'],
     templateUrl: 'radarchart_component.html',
-    directives: const [NgIf]
+    directives: const [NgIf],
+    changeDetection: ChangeDetectionStrategy.OnPush
 )
 class RadarChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {

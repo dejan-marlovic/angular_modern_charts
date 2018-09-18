@@ -7,7 +7,8 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     selector: 'barchart',
     styleUrls: const ['barchart_component.css'],
     templateUrl: 'barchart_component.html',
-    directives: const [NgIf]
+    directives: const [NgIf],
+    changeDetection: ChangeDetectionStrategy.OnPush
 )
 class BarChartComponent implements AfterViewInit, OnChanges, OnDestroy
 {
