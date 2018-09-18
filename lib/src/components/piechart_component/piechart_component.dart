@@ -10,21 +10,19 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     directives: const [NgIf],
     changeDetection: ChangeDetectionStrategy.OnPush
 )
-class PieChartComponent implements AfterViewInit, OnChanges, OnDestroy
+class PieChartComponent implements AfterViewInit, AfterChanges, OnDestroy
 {
   PieChartComponent(this._hostElement);
 
   @override
   void ngAfterViewInit()
-  {
-    //print('viewInit');
+  {    
     _chart = new PieChart(_hostElement.querySelector('#chart'));
   }
 
   @override
-  void ngOnChanges(Map<String, SimpleChange> changes)
-  {
-    //print('changes');
+  void ngAfterChanges()
+  {    
     if (_chart != null && chartData != null) {      
       _chart.draw(chartData.encoded, chartProperties.encoded);
     }

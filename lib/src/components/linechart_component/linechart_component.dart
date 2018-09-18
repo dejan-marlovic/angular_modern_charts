@@ -10,7 +10,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     directives: const [NgIf],
     changeDetection: ChangeDetectionStrategy.OnPush
 )
-class LineChartComponent implements AfterViewInit, OnChanges, OnDestroy
+class LineChartComponent implements AfterViewInit, AfterChanges, OnDestroy
 {
   LineChartComponent(this._hostElement);
 
@@ -21,7 +21,7 @@ class LineChartComponent implements AfterViewInit, OnChanges, OnDestroy
   }
 
   @override
-  void ngOnChanges(Map<String, SimpleChange> changes)
+  void ngAfterChanges()
   {
     if (_chart != null && chartData != null) _chart.draw(chartData.encoded, chartProperties.encoded);
   }

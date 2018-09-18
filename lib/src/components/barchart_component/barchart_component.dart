@@ -10,7 +10,7 @@ import 'package:angular_modern_charts/angular_modern_charts.dart';
     directives: const [NgIf],
     changeDetection: ChangeDetectionStrategy.OnPush
 )
-class BarChartComponent implements AfterViewInit, OnChanges, OnDestroy
+class BarChartComponent implements AfterViewInit, AfterChanges, OnDestroy
 {
   BarChartComponent(this._hostElement);
 
@@ -21,7 +21,7 @@ class BarChartComponent implements AfterViewInit, OnChanges, OnDestroy
   }
 
   @override
-  void ngOnChanges(Map<String, SimpleChange> changes)
+  void ngAfterChanges()
   {
     if (_chart != null) _chart.draw(chartData.encoded, chartProperties.encoded);
   }
