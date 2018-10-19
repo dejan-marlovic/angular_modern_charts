@@ -9,7 +9,7 @@ environment:
 
 dependencies:
   angular: ^5.0.0
-  angular_components: ^0.9.1
+  angular_components: ^0.10.0
   modern_charts:
     git: https://github.com/afpatmin/modern_charts
-  sass_builder: ^2.1.1
+  sass_builder: ^2.1.2
