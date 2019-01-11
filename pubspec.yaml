@@ -8,8 +8,8 @@ environment:
   sdk: '>=2.0.0 <3.0.0'
 
 dependencies:
-  angular: ^5.0.0
-  angular_components: ^0.10.0
+  angular: ^5.2.0
+  angular_components: ^0.11.0
   modern_charts:
     git: https://github.com/afpatmin/modern_charts
   sass_builder: ^2.1.2
