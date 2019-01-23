@@ -1,5 +1,6 @@
 library chart_component;
 
+import 'dart:async';
 import 'dart:convert';
 import 'dart:html' as html;
 import 'package:angular/angular.dart';
@@ -17,7 +18,11 @@ part 'radarchart_component.dart';
 
 abstract class ChartComponent
     implements OnInit, AfterChanges, AfterViewInit, OnDestroy {
-  ChartComponent(this._hostElement);
+  ChartComponent(this._hostElement) {
+    _resizeListener = html.window.onResize.listen((_) {
+      _chart?.resize(true);      
+    });
+  }
 
   @Input()
   bool loading = false;
@@ -33,6 +38,8 @@ abstract class ChartComponent
   Map<dynamic, dynamic> optionsData;
   final html.Element _hostElement;
 
+  StreamSubscription<html.Event> _resizeListener;
+
   @override
   void ngAfterChanges() {
     _chart?.draw(chartData.encoded, optionsData);
@@ -41,6 +48,7 @@ abstract class ChartComponent
   @override
   void ngOnDestroy() {
     _chart.dispose();
+    _resizeListener?.cancel();
   }
 
   @override

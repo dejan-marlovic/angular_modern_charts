@@ -5,7 +5,7 @@ class BarChartData extends BaseData {
   final List<String> _categories;
 
   BarChartData(this._categories, this._columns)
-      : super(new DataTable(<List<dynamic>>[_categories]          
+      : super(new DataTable(<List<dynamic>>[_categories..insert(0, 'Categories')]          
           ..addAll(_columns.map((c) => c.encoded)))) {
     if (_categories == null) {
       throw new ArgumentError.notNull('categories');
@@ -15,11 +15,10 @@ class BarChartData extends BaseData {
     }
 
     for (final column in _columns) {
-      if (column._data.length != _categories.length)
+      if (column._data.length != _categories.length - 1)
         throw new StateError(
             'Each column has to contain the same number of values as there are categories.');
-    }    
-    _categories.insert(0, 'Categories');        
+    }        
   }
 
   List<String> get categories => _categories.sublist(1);
@@ -38,8 +37,7 @@ class BarChartColumnData {
     }
     if (_data == null) {
       throw new ArgumentError.notNull('data');
-    }
-    print(_data);
+    }    
   }
 
   List<num> get data => _data;
