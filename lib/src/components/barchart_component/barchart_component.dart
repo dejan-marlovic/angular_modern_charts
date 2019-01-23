@@ -10,46 +10,44 @@ import 'package:modern_charts/modern_charts.dart';
     styleUrls: const ['barchart_component.css'],
     templateUrl: 'barchart_component.html',
     directives: const [NgIf],
-    changeDetection: ChangeDetectionStrategy.OnPush
-)
-class BarChartComponent implements OnInit, AfterViewInit, AfterChanges, OnDestroy
-{
+    changeDetection: ChangeDetectionStrategy.OnPush)
+class BarChartComponent
+    implements OnInit, AfterViewInit, AfterChanges, OnDestroy {
   BarChart _chart;
-  Map<dynamic, dynamic> _optionsData;
+  Map<dynamic, dynamic> optionsData;
   final html.Element _hostElement;
 
   @Input()
   bool loading = false;
 
   @Input()
-  BarChartProperties chartProperties = new BarChartProperties()..height = '300px';
+  BarChartProperties chartProperties = new BarChartProperties();
 
   @Input()
   BarChartData chartData = new BarChartData([], []);
-  
+
   BarChartComponent(this._hostElement);
 
   @override
-  void ngAfterChanges()
-  {
-    if (_chart != null) _chart.draw(chartData.encoded, _optionsData);
+  void ngAfterChanges() {
+    _chart?.draw(chartData.encoded, optionsData);
   }
 
   @override
-  void ngAfterViewInit()
-  {
-    _chart = new BarChart(_hostElement.querySelector('#chart'));
+  void ngAfterViewInit() {
+    _chart = new BarChart(_hostElement.querySelector('#chart'))
+      ..draw(chartData.encoded, optionsData);
   }
 
   @override
-  void ngOnDestroy()
-  {
+  void ngOnDestroy() {
     _chart.free();
   }
 
   @override
   void ngOnInit() {
-    _optionsData = chartProperties == null ? null : json.decode(json.encode(chartProperties));
+    optionsData = chartProperties == null
+        ? null
+        : json.decode(json.encode(chartProperties));
   }
 }
-
