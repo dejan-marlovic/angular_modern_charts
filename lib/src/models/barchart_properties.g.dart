@@ -135,7 +135,9 @@ Axis _$AxisFromJson(Map<String, dynamic> json) {
         : Labels.fromJson(json['labels'] as Map<String, dynamic>)
     ..position = json['position'] as String
     ..interval = json['interval'] as num
-    ..minInterval = json['minInterval'] as num;
+    ..minInterval = json['minInterval'] as num
+    ..minValue = json['minValue'] as num
+    ..maxValue = json['maxValue'] as num;
 }
 
 Map<String, dynamic> _$AxisToJson(Axis instance) {
@@ -157,6 +159,8 @@ Map<String, dynamic> _$AxisToJson(Axis instance) {
   writeNotNull('position', instance.position);
   writeNotNull('interval', instance.interval);
   writeNotNull('minInterval', instance.minInterval);
+  writeNotNull('minValue', instance.minValue);
+  writeNotNull('maxValue', instance.maxValue);
   return val;
 }
 
