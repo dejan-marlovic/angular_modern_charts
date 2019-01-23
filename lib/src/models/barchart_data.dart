@@ -18,9 +18,10 @@ class BarChartColumnData {
     if (value == null) {
       throw new ArgumentError.notNull('data');
     }
-    _encoded = <dynamic>[]
+    _data = value;
+    _encoded = []
       ..add(_name)
-      ..addAll(_data);
+      ..addAll(value);
   }
 
   List<dynamic> get encoded => _encoded;
@@ -58,6 +59,8 @@ class BarChartData {
       ..add(_categories)
       ..addAll(_columns.map((c) => c.encoded)));
   }
+
+  List<String> get categories => _categories.sublist(1);
 
   DataTable get encoded => _encoded;
 }
