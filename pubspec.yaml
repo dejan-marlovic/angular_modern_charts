@@ -10,7 +10,8 @@ environment:
 dependencies:
   angular: ^5.2.0  
   modern_charts:
-    git: https://github.com/afpatmin/modern_charts
+    #git: https://github.com/afpatmin/modern_charts
+    path: ../modern_charts
   sass_builder: ^2.1.2
      
 dev_dependencies:

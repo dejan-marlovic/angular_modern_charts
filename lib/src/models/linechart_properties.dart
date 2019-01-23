@@ -1,121 +1,22 @@
-class LineChartProperties
-{
-  LineChartProperties(this.height);
+part of base_properties;
 
-  Map<String, dynamic> get encoded
-  {
-    final options = <String, dynamic>{};
-    options['series'] = <String, dynamic>{};
-    options['series']['curveTension'] = seriesCurveTension;
-    options['series']['fillOpacity'] = seriesFillOpacity;
-    options['series']['lineWidth'] = seriesLineWidth;
-    options['series']['labels']  = <String, dynamic>{};
-    options['series']['labels']['enabled'] = showLineLabels;
-    options['series']['labels']['style'] = <String, dynamic>{};
-    options['series']['labels']['style']['fontFamily'] = xAxisLabelsFontFamily;
-    options['series']['labels']['style']['fontSize'] = lineLabelFontSize;
-    options['series']['labels']['style']['fontStyle'] = lineLabelFontStyle;
-    options['series']['labels']['style']['color'] = lineLabelColor;
-    options['series']['markers'] = <String, dynamic>{};
-    options['series']['markers']['enabled']  = showMarkers;
-    options['series']['markers']['fillColor'] = markerFillColor;
-    options['series']['markers']['lineWidth'] = markerLineWidth;
-    options['series']['markers']['strokeColor'] = markerStrokeColor;
-    options['series']['markers']['size'] = markerSize;
+@JsonSerializable(includeIfNull: false)
+class LineChartProperties extends BaseProperties {
+  SeriesProperty series = SeriesProperty();
+  AxisProperty xAxis = AxisProperty()
+    ..title.text = 'x axis'
+    ..labels.minRotation = -90
+    ..labels.maxRotation = 0
+    ..position = 'bottom';
+  AxisProperty yAxis = AxisProperty()
+    ..title.text = 'y axis'
+    ..position = 'left';
 
-    options['xAxis'] = <String, dynamic>{};
-    options['xAxis']['gridLineColor'] = horisontalGridLineColor;
-    options['xAxis']['gridLineWidth'] = horisontalGridLineWidth;
-    options['xAxis']['lineColor'] = xAxisColor;
-    options['xAxis']['lineWidth'] = xAxisLineWidth;
-    options['xAxis']['labels']  = <String, dynamic>{};
-    options['xAxis']['labels']['maxRotation'] = xAxisLabelMaxRotation;
-    options['xAxis']['labels']['minRotation'] = xAxisLabelMinRotation;
-    options['xAxis']['labels']['style'] = <String, dynamic>{};
-    options['xAxis']['labels']['style']['color'] = xAxisLabelColor;
-    options['xAxis']['labels']['style']['fontFamily'] = xAxisLabelsFontFamily;
-    options['xAxis']['labels']['style']['fontSize'] = xAxisLabelFontSize;
-    options['xAxis']['labels']['style']['fontStyle'] = xAxisLabelsFontStyle;
-    options['xAxis']['position'] = 'bottom'; //only bottom supported
-    options['xAxis']['title'] = <String, dynamic>{};
-    options['xAxis']['title']['style'] = <String, dynamic>{};
-    options['xAxis']['title']['style']['color'] = chartTitleColor;
-    options['xAxis']['title']['style']['fontFamily'] = chartTitleFontFamily;
-    options['xAxis']['title']['style']['fontSize'] = chartTitleFontSize;
-    options['xAxis']['title']['style']['fontStyle'] = chartTitleFontStyle;
-    options['xAxis']['title']['text'] = chartTitle;
+  LineChartProperties();
 
-    options['yAxis'] = <String, dynamic>{};
-    options['yAxis']['gridLineColor'] = verticalGridLineColor;
-    options['yAxis']['gridLineWidth'] = verticalGridLineWidth;
-    options['yAxis']['lineColor'] = yAxisColor;
-    options['yAxis']['lineWidth'] = yAxisLineWidth;
-    options['yAxis']['interval'] = yAxisInterval;
-    options['yAxis']['labels'] = <String, dynamic>{};
-    options['yAxis']['labels']['formatter'] = null;
-    options['yAxis']['labels']['style'] = <String, dynamic>{};
-    options['yAxis']['labels']['style']['fontFamily'] = yAxisLabelsFontFamily;
-    options['yAxis']['labels']['style']['fontSize'] = yAxisLabelsFontSize;
-    options['yAxis']['labels']['style']['fontStyle'] = yAxisLabelsFontStyle;
-    options['yAxis']['labels']['style']['color'] = yAxisLabelColor;
-    options['yAxis']['maxValue'] = yAxisMaxValue;
-    options['yAxis']['minValue'] = yAxisMinValue;
-    options['yAxis']['minInterval'] = yAxisMinInterval;
-    options['yAxis']['postion'] = 'left';
-    options['yAxis']['title'] = <String, dynamic>{};
-    options['yAxis']['title']['text'] = yAxisTitle;
-    options['yAxis']['title']['style'] = <String, dynamic>{};
-    options['yAxis']['title']['style']['color'] = yAxisTitleColor;
-    options['yAxis']['title']['style']['fontFamily'] = yAxisTitleFontFamily;
-    options['yAxis']['title']['style']['fontSize'] = yAxisTitleFontSize;
-    options['yAxis']['title']['style']['fontStyle'] = yAxisTitleFontStyle;
+  factory LineChartProperties.fromJson(Map<String, dynamic> json) =>
+      _$LineChartPropertiesFromJson(json);
 
-    return options;
-  }
-
-  String chartTitle;
-  String chartTitleColor = '#212121';
-  String chartTitleFontFamily = "'Segoe UI', Open Sans, Verdana, Arial";
-  num chartTitleFontSize = 15;
-  String chartTitleFontStyle = 'normal';
-  String height;
-  String horisontalGridLineColor = '#c0c0c0';
-  num horisontalGridLineWidth = 1;
-  String lineLabelColor = '#212121';
-  num lineLabelFontSize = 15;
-  String lineLabelFontStyle = 'normal';
-  String markerFillColor;
-  num markerLineWidth = 1;
-  num markerSize = 4;
-  String markerStrokeColor = 'white';
-  num seriesCurveTension = .4;
-  num seriesFillOpacity = .25;
-  num seriesLineWidth = 2;
-  bool showLineLabels = true;
-  bool showMarkers = true;
-  String verticalGridLineColor = '#c0c0c0';
-  num verticalGridLineWidth = 1;
-  String xAxisColor = '#c0c0c0';
-  String xAxisLabelColor = '#212121';
-  num xAxisLabelFontSize = 15;
-  num xAxisLabelMaxRotation = 0;
-  num xAxisLabelMinRotation = -90;
-  String xAxisLabelsFontFamily = "'Segoe UI', Open Sans, Verdana, Arial";
-  String xAxisLabelsFontStyle = 'normal';
-  num xAxisLineWidth = 1;
-  String yAxisColor = '#c0c0c0';
-  num yAxisInterval;
-  String yAxisLabelColor = '#212121';
-  String yAxisLabelsFontFamily = "'Segoe UI', Open Sans, Verdana, Arial";
-  num yAxisLabelsFontSize = 15;
-  String yAxisLabelsFontStyle = 'normal';
-  num yAxisLineWidth = 0;
-  num yAxisMaxValue;
-  num yAxisMinInterval;
-  num yAxisMinValue;
-  String yAxisTitle;
-  String yAxisTitleColor = '#212121';
-  String yAxisTitleFontFamily = "'Segoe UI', Open Sans, Verdana, Arial";
-  num yAxisTitleFontSize = 20;
-  String yAxisTitleFontStyle = 'normal';
+  @override
+  Map<String, dynamic> toJson() => _$LineChartPropertiesToJson(this);
 }
