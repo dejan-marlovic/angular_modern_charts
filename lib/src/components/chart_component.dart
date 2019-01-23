@@ -40,7 +40,7 @@ abstract class ChartComponent
 
   @override
   void ngOnDestroy() {
-    _chart.free();
+    _chart.dispose();
   }
 
   @override

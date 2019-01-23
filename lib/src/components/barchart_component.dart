@@ -11,11 +11,8 @@ class BarChartComponent extends ChartComponent {
   }
 
   @override
-  void ngAfterViewInit() {
-    print(chartData.runtimeType);
+  void ngAfterViewInit() {    
     _chart = new BarChart(_hostElement.querySelector('#chart'))
       ..draw(chartData.encoded, optionsData);
-
-    
   }
 }
