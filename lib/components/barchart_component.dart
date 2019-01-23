@@ -3,7 +3,7 @@ part of chart_component;
 @Component(
     selector: 'barchart',
     templateUrl: 'chart_component.html',
-    directives: const [coreDirectives],
+    directives: const [NgIf, NgStyle],
     changeDetection: ChangeDetectionStrategy.OnPush)
 class BarChartComponent extends ChartComponent {
   BarChartComponent(html.Element hostElement) : super(hostElement) {

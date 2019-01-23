@@ -3,7 +3,7 @@ part of chart_component;
 @Component(
     selector: 'linechart',
     templateUrl: 'chart_component.html',
-    directives: const [coreDirectives],
+    directives: const [NgIf, NgStyle],
     changeDetection: ChangeDetectionStrategy.OnPush)
 class LineChartComponent extends ChartComponent {
   LineChartComponent(html.Element hostElement) : super(hostElement) {

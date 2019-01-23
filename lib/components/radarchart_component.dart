@@ -3,7 +3,7 @@ part of chart_component;
 @Component(
     selector: 'radarchart',
     templateUrl: 'chart_component.html',
-    directives: const [coreDirectives],
+    directives: const [NgIf, NgStyle],
     changeDetection: ChangeDetectionStrategy.OnPush)
 class RadarChartComponent extends ChartComponent {
   RadarChartComponent(html.Element hostElement) : super(hostElement) {

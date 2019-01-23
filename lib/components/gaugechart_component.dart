@@ -3,7 +3,7 @@ part of chart_component;
 @Component(
     selector: 'gaugechart',
     templateUrl: 'chart_component.html',
-    directives: const [coreDirectives],
+    directives: const [NgIf, NgStyle],
     changeDetection: ChangeDetectionStrategy.OnPush)
 class GaugeChartComponent extends ChartComponent {
   GaugeChartComponent(html.Element hostElement) : super(hostElement) {
