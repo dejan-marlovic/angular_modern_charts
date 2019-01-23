@@ -160,8 +160,8 @@ Map<String, dynamic> _$AxisToJson(Axis instance) {
   return val;
 }
 
-BarChartOptions _$BarChartOptionsFromJson(Map<String, dynamic> json) {
-  return BarChartOptions()
+BarChartProperties _$BarChartPropertiesFromJson(Map<String, dynamic> json) {
+  return BarChartProperties()
     ..series = json['series'] == null
         ? null
         : Series.fromJson(json['series'] as Map<String, dynamic>)
@@ -173,7 +173,7 @@ BarChartOptions _$BarChartOptionsFromJson(Map<String, dynamic> json) {
         : Axis.fromJson(json['yAxis'] as Map<String, dynamic>);
 }
 
-Map<String, dynamic> _$BarChartOptionsToJson(BarChartOptions instance) {
+Map<String, dynamic> _$BarChartPropertiesToJson(BarChartProperties instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

@@ -84,7 +84,7 @@ class Axis {
 }
 
 @JsonSerializable(includeIfNull: false)
-class BarChartOptions {
+class BarChartProperties {
   Series series = Series();
   Axis xAxis = Axis();
   Axis yAxis = Axis();
@@ -92,7 +92,7 @@ class BarChartOptions {
   @JsonKey(ignore: true)
   String height;
 
-  BarChartOptions() {
+  BarChartProperties() {
     xAxis.title.text = 'x axis';
     xAxis.labels
       ..minRotation = -90
@@ -102,10 +102,10 @@ class BarChartOptions {
     yAxis.position = 'left';
   }
 
-  factory BarChartOptions.fromJson(Map<String, dynamic> json) =>
-      _$BarChartOptionsFromJson(json);
+  factory BarChartProperties.fromJson(Map<String, dynamic> json) =>
+      _$BarChartPropertiesFromJson(json);
 
-  Map<String, dynamic> toJson() => _$BarChartOptionsToJson(this);
+  Map<String, dynamic> toJson() => _$BarChartPropertiesToJson(this);
 }
 
 /*

@@ -22,7 +22,7 @@ class BarChartComponent implements OnInit, AfterViewInit, AfterChanges, OnDestro
   bool loading = false;
 
   @Input()
-  BarChartOptions chartProperties = new BarChartOptions()..height = '300px';
+  BarChartProperties chartProperties = new BarChartProperties()..height = '300px';
 
   @Input()
   BarChartData chartData = new BarChartData([], []);
