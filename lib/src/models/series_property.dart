@@ -11,10 +11,10 @@ class SeriesProperty {
   MarkersProperty markers = MarkersProperty();
 
   bool counterclockwise = false;
-  num startAngle = -90;
-  num curveTension = 0.4;
-  num fillOpacity = 0.25;
-  num lineWidth = 2;
+  int startAngle = -90;
+  double curveTension = 0.4;
+  double fillOpacity = 0.25;
+  int lineWidth = 2;
 
   SeriesProperty();
 

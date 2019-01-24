@@ -2,7 +2,7 @@ part of base_properties;
 
 @JsonSerializable(includeIfNull: false)
 class PieChartProperties extends BaseProperties {
-  num pieHole = 0;
+  double pieHole = 0;
 
   SeriesProperty series = SeriesProperty()
     ..counterclockwise = false

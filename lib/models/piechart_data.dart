@@ -1,40 +1,24 @@
 part of base_data;
 
 class PieChartData extends BaseData {
-  final List<PieChartColumnData> _columns;
+  final List<PieChartSliceData> _slices;
   final String _label;
 
-  PieChartData(this._label, this._columns)
-      : super(new DataTable([
+  PieChartData(this._label, this._slices)
+      : super(DataTable([
           [_label, 'share'],
-          _columns.map((c) => c.encoded).toList(growable: false)
-        ])) {
-    if (_label == null) {
-      throw new ArgumentError('label');
-    }
-    if (_columns == null) {
-      throw new ArgumentError.notNull('columns');
-    }
-  }
+        ]..addAll(_slices.map((c) => c.encoded))));
 
-  List<PieChartColumnData> get columns => _columns;
+  List<PieChartSliceData> get columns => _slices;
   String get label => _label;
 }
 
-class PieChartColumnData {
+class PieChartSliceData {
   final String _name;
-  final List<num> _data;
+  final double _data;
   final List<dynamic> _encoded;
 
-  PieChartColumnData(this._name, this._data)
-      : _encoded = [_name]..addAll(_data) {
-    if (_name == null) {
-      throw new ArgumentError.notNull('name');
-    }
-    if (_data == null) {
-      throw new ArgumentError.notNull('data');
-    }
-  }
+  PieChartSliceData(this._name, this._data) : _encoded = [_name, _data];
 
   List<dynamic> get encoded => _encoded;
 }

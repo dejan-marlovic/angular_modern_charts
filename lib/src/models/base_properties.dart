@@ -1,4 +1,5 @@
 library base_properties;
+
 import 'package:json_annotation/json_annotation.dart';
 
 import 'axis_property.dart';
@@ -16,7 +17,6 @@ part '../../models/piechart_properties.dart';
 part '../../models/radarchart_properties.dart';
 
 abstract class BaseProperties {
-
   Map<String, dynamic> toJson();
 
   @JsonKey(ignore: true)

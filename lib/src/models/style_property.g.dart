@@ -9,7 +9,7 @@ part of 'style_property.dart';
 StyleProperty _$StylePropertyFromJson(Map<String, dynamic> json) {
   return StyleProperty()
     ..fontFamily = json['fontFamily'] as String
-    ..fontSize = json['fontSize'] as num
+    ..fontSize = json['fontSize'] as int
     ..fontStyleProperty = json['fontStyleProperty'] as String
     ..color = json['color'] as String;
 }

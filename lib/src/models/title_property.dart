@@ -11,7 +11,8 @@ class TitleProperty {
 
   TitleProperty();
 
-  factory TitleProperty.fromJson(Map<String, dynamic> json) => _$TitlePropertyFromJson(json);
+  factory TitleProperty.fromJson(Map<String, dynamic> json) =>
+      _$TitlePropertyFromJson(json);
 
   Map<String, dynamic> toJson() => _$TitlePropertyToJson(this);
 }

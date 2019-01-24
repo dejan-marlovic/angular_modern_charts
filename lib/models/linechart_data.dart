@@ -2,46 +2,33 @@ part of base_data;
 
 class LineChartData extends BaseData {
   final List<String> _categories;
-  final List<LineChartColumnData> _columns;
+  final List<LineChartPointData> _points;
 
-  LineChartData(this._categories, this._columns)
-      : super(DataTable([
-          _categories,
-          _columns.map((c) => c.encoded).toList(growable: false)
-        ])) {
-    if (_categories == null) {
-      throw new ArgumentError.notNull('categories');
+  LineChartData(this._categories, this._points)
+      : super(DataTable(<List<dynamic>>[
+          ['Categories']..addAll(_categories)
+        ]..addAll(_points.map((c) => c.encoded)))) {
+    if (_points.length < 2) {
+      throw ArgumentError('At least two points are required.');
     }
-    if (_columns == null) {
-      throw new ArgumentError.notNull('columns');
-    }
-
-    for (final column in _columns) {
+    for (final column in _points) {
       if (column._data.length != _categories.length)
-        throw new StateError(
+        throw StateError(
             'Each column has to contain the same number of values as there are categories.');
     }
-    _categories.insert(0, 'Categories');
   }
 
   List<String> get categories => _categories.sublist(1);
-  List<LineChartColumnData> get columns => _columns;
+  List<LineChartPointData> get points => _points;
 }
 
-class LineChartColumnData {
+class LineChartPointData {
   final String _name;
-  final List<num> _data;
+  final List<double> _data;
   final List<dynamic> _encoded;
 
-  LineChartColumnData(this._name, this._data)
-      : _encoded = [_name]..addAll(_data) {
-    if (_name == null) {
-      throw new ArgumentError.notNull('name');
-    }
-    if (_data == null) {
-      throw new ArgumentError.notNull('data');
-    }
-  }
+  LineChartPointData(this._name, this._data)
+      : _encoded = [_name]..addAll(_data);
 
   List<dynamic> get encoded => _encoded;
 }

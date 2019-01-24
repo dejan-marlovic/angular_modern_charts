@@ -15,10 +15,10 @@ SeriesProperty _$SeriesPropertyFromJson(Map<String, dynamic> json) {
         ? null
         : MarkersProperty.fromJson(json['markers'] as Map<String, dynamic>)
     ..counterclockwise = json['counterclockwise'] as bool
-    ..startAngle = json['startAngle'] as num
-    ..curveTension = json['curveTension'] as num
-    ..fillOpacity = json['fillOpacity'] as num
-    ..lineWidth = json['lineWidth'] as num;
+    ..startAngle = json['startAngle'] as int
+    ..curveTension = (json['curveTension'] as num)?.toDouble()
+    ..fillOpacity = (json['fillOpacity'] as num)?.toDouble()
+    ..lineWidth = json['lineWidth'] as int;
 }
 
 Map<String, dynamic> _$SeriesPropertyToJson(SeriesProperty instance) {

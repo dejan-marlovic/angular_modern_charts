@@ -15,17 +15,17 @@ AxisProperty _$AxisPropertyFromJson(Map<String, dynamic> json) {
         ? null
         : CrosshairProperty.fromJson(json['crosshair'] as Map<String, dynamic>)
     ..lineColor = json['lineColor'] as String
-    ..lineWidth = json['lineWidth'] as num
+    ..lineWidth = json['lineWidth'] as int
     ..gridLineColor = json['gridLineColor'] as String
-    ..gridLineWidth = json['gridLineWidth'] as num
+    ..gridLineWidth = json['gridLineWidth'] as int
     ..labels = json['labels'] == null
         ? null
         : LabelsProperty.fromJson(json['labels'] as Map<String, dynamic>)
     ..position = json['position'] as String
-    ..interval = json['interval'] as num
-    ..minInterval = json['minInterval'] as num
-    ..minValue = json['minValue'] as num
-    ..maxValue = json['maxValue'] as num;
+    ..interval = json['interval'] as int
+    ..minInterval = json['minInterval'] as int
+    ..minValue = json['minValue'] as int
+    ..maxValue = json['maxValue'] as int;
 }
 
 Map<String, dynamic> _$AxisPropertyToJson(AxisProperty instance) {

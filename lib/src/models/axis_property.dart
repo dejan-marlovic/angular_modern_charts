@@ -11,19 +11,20 @@ class AxisProperty {
   TitleProperty title = TitleProperty();
   CrosshairProperty crosshair = CrosshairProperty();
   String lineColor = '#c0c0c0';
-  num lineWidth = 1;
+  int lineWidth = 1;
   String gridLineColor = '#c0c0c0';
-  num gridLineWidth = 1;
-  LabelsProperty labels = new LabelsProperty();
+  int gridLineWidth = 1;
+  LabelsProperty labels = LabelsProperty();
   String position;
-  num interval;
-  num minInterval;
-  num minValue;
-  num maxValue;
+  int interval;
+  int minInterval;
+  int minValue;
+  int maxValue;
 
   AxisProperty();
 
-  factory AxisProperty.fromJson(Map<String, dynamic> json) => _$AxisPropertyFromJson(json);
+  factory AxisProperty.fromJson(Map<String, dynamic> json) =>
+      _$AxisPropertyFromJson(json);
 
   Map<String, dynamic> toJson() => _$AxisPropertyToJson(this);
 }

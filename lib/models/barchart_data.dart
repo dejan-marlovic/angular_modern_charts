@@ -5,20 +5,14 @@ class BarChartData extends BaseData {
   final List<String> _categories;
 
   BarChartData(this._categories, this._columns)
-      : super(new DataTable(<List<dynamic>>[_categories..insert(0, 'Categories')]          
-          ..addAll(_columns.map((c) => c.encoded)))) {
-    if (_categories == null) {
-      throw new ArgumentError.notNull('categories');
-    }
-    if (_columns == null) {
-      throw new ArgumentError.notNull('columns');
-    }
-
+      : super(DataTable(<List<dynamic>>[
+          ['Categories']..addAll(_categories)
+        ]..addAll(_columns.map((c) => c.encoded)))) {
     for (final column in _columns) {
-      if (column._data.length != _categories.length - 1)
-        throw new StateError(
+      if (column._data.length != _categories.length)
+        throw StateError(
             'Each column has to contain the same number of values as there are categories.');
-    }        
+    }
   }
 
   List<String> get categories => _categories.sublist(1);
@@ -27,20 +21,13 @@ class BarChartData extends BaseData {
 
 class BarChartColumnData {
   final String _name;
-  final List<num> _data;
+  final List<double> _data;
   final List<dynamic> _encoded;
 
   BarChartColumnData(this._name, this._data)
-      : _encoded = [_name]..addAll(_data) {
-    if (_name == null) {
-      throw new ArgumentError.notNull('name');
-    }
-    if (_data == null) {
-      throw new ArgumentError.notNull('data');
-    }    
-  }
+      : _encoded = [_name]..addAll(_data);
 
-  List<num> get data => _data;
+  List<double> get data => _data;
   List<dynamic> get encoded => _encoded;
   String get name => _name;
 }

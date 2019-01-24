@@ -6,9 +6,9 @@ class RadarChartProperties extends BaseProperties {
   MarkersProperty markers = MarkersProperty();
   AxisProperty xAxis = AxisProperty();
   AxisProperty yAxis = AxisProperty();
-  
+
   RadarChartProperties();
-  
+
   factory RadarChartProperties.fromJson(Map<String, dynamic> json) =>
       _$RadarChartPropertiesFromJson(json);
 

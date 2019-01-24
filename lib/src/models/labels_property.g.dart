@@ -12,8 +12,8 @@ LabelsProperty _$LabelsPropertyFromJson(Map<String, dynamic> json) {
     ..style = json['style'] == null
         ? null
         : StyleProperty.fromJson(json['style'] as Map<String, dynamic>)
-    ..minRotation = json['minRotation'] as num
-    ..maxRotation = json['maxRotation'] as num;
+    ..minRotation = json['minRotation'] as int
+    ..maxRotation = json['maxRotation'] as int;
 }
 
 Map<String, dynamic> _$LabelsPropertyToJson(LabelsProperty instance) {

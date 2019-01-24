@@ -87,7 +87,7 @@ Map<String, dynamic> _$LineChartPropertiesToJson(LineChartProperties instance) {
 
 PieChartProperties _$PieChartPropertiesFromJson(Map<String, dynamic> json) {
   return PieChartProperties()
-    ..pieHole = json['pieHole'] as num
+    ..pieHole = (json['pieHole'] as num)?.toDouble()
     ..series = json['series'] == null
         ? null
         : SeriesProperty.fromJson(json['series'] as Map<String, dynamic>);

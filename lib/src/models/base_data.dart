@@ -1,4 +1,3 @@
-
 library base_data;
 
 import 'package:modern_charts/modern_charts.dart';
@@ -14,5 +13,4 @@ abstract class BaseData {
 
   DataTable get encoded => _encoded;
   final DataTable _encoded;
-
 }

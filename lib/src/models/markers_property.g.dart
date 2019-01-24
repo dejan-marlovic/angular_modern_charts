@@ -10,9 +10,9 @@ MarkersProperty _$MarkersPropertyFromJson(Map<String, dynamic> json) {
   return MarkersProperty()
     ..enabled = json['enabled'] as bool
     ..fillColor = json['fillColor'] as String
-    ..lineWidth = json['lineWidth'] as num
+    ..lineWidth = json['lineWidth'] as int
     ..strokeColor = json['strokeColor'] as String
-    ..size = json['size'] as num;
+    ..size = json['size'] as int;
 }
 
 Map<String, dynamic> _$MarkersPropertyToJson(MarkersProperty instance) {
