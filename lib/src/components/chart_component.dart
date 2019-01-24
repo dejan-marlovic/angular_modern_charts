@@ -20,9 +20,6 @@ part '../../components/radarchart_component.dart';
 abstract class ChartComponent
     implements OnInit, AfterChanges, AfterViewInit, OnDestroy {
   @Input()
-  bool loading = false;
-
-  @Input()
   BaseData chartData;
 
   @Input()
@@ -37,7 +34,9 @@ abstract class ChartComponent
 
   ChartComponent(this._hostElement) {
     _resizeListener = html.window.onResize.listen((_) {
-      _chart?.resize(true);
+      if (chartData != null && _chart != null) {
+        _chart.resize(true);
+      }
     });
   }
 

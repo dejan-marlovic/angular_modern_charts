@@ -12,7 +12,9 @@ class RadarChartComponent extends ChartComponent {
 
   @override
   void ngAfterViewInit() {
-    _chart = RadarChart(_hostElement.querySelector('#chart'))
-      ..draw(chartData.encoded, optionsData);
+    _chart = RadarChart(_hostElement.querySelector('#chart'));
+    if (chartData != null) {
+      _chart.draw(chartData.encoded, optionsData);
+    }
   }
 }

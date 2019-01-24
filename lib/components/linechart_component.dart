@@ -12,7 +12,9 @@ class LineChartComponent extends ChartComponent {
 
   @override
   void ngAfterViewInit() {
-    _chart = LineChart(_hostElement.querySelector('#chart'))
-      ..draw(chartData.encoded, optionsData);
+    _chart = LineChart(_hostElement.querySelector('#chart'));
+    if (chartData != null) {
+      _chart.draw(chartData.encoded, optionsData);
+    }
   }
 }
