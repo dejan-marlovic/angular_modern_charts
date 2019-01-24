@@ -42,4 +42,4 @@ app_component.html
 </div>
 ```
 Output
-![Output](/examples/barchart.png)
+![Output](/example/barchart.png)
