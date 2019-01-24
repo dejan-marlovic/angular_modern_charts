@@ -3,7 +3,7 @@ part 'style_property.g.dart';
 
 @JsonSerializable(includeIfNull: false)
 class StyleProperty {
-  String fontFamily = "'Segoe	UI',	Open Sans,	Verdana,	Arial'";
+  String fontFamily = 'Arial, Helvetica, sans-serif';
   num fontSize = 15;
   String fontStyleProperty = 'normal';
   String color = '#212121';
