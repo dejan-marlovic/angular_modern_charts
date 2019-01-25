@@ -6,15 +6,14 @@ part of 'labels_property.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-LabelsProperty _$LabelsPropertyFromJson(Map<String, dynamic> json) {
-  return LabelsProperty()
-    ..enabled = json['enabled'] as bool
-    ..style = json['style'] == null
-        ? null
-        : StyleProperty.fromJson(json['style'] as Map<String, dynamic>)
-    ..minRotation = json['minRotation'] as int
-    ..maxRotation = json['maxRotation'] as int;
-}
+LabelsProperty _$LabelsPropertyFromJson(Map<String, dynamic> json) =>
+    LabelsProperty()
+      ..enabled = json['enabled'] as bool
+      ..style = json['style'] == null
+          ? null
+          : StyleProperty.fromJson(json['style'] as Map<String, dynamic>)
+      ..minRotation = json['minRotation'] as int
+      ..maxRotation = json['maxRotation'] as int;
 
 Map<String, dynamic> _$LabelsPropertyToJson(LabelsProperty instance) {
   final val = <String, dynamic>{};

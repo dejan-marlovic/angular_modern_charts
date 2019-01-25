@@ -18,5 +18,6 @@ class BarChartProperties extends BaseProperties {
   factory BarChartProperties.fromJson(Map<String, dynamic> json) =>
       _$BarChartPropertiesFromJson(json);
 
+  @override
   Map<String, dynamic> toJson() => _$BarChartPropertiesToJson(this);
 }

@@ -6,18 +6,17 @@ part of base_properties;
 // JsonSerializableGenerator
 // **************************************************************************
 
-BarChartProperties _$BarChartPropertiesFromJson(Map<String, dynamic> json) {
-  return BarChartProperties()
-    ..series = json['series'] == null
-        ? null
-        : SeriesProperty.fromJson(json['series'] as Map<String, dynamic>)
-    ..xAxis = json['xAxis'] == null
-        ? null
-        : AxisProperty.fromJson(json['xAxis'] as Map<String, dynamic>)
-    ..yAxis = json['yAxis'] == null
-        ? null
-        : AxisProperty.fromJson(json['yAxis'] as Map<String, dynamic>);
-}
+BarChartProperties _$BarChartPropertiesFromJson(Map<String, dynamic> json) =>
+    BarChartProperties()
+      ..series = json['series'] == null
+          ? null
+          : SeriesProperty.fromJson(json['series'] as Map<String, dynamic>)
+      ..xAxis = json['xAxis'] == null
+          ? null
+          : AxisProperty.fromJson(json['xAxis'] as Map<String, dynamic>)
+      ..yAxis = json['yAxis'] == null
+          ? null
+          : AxisProperty.fromJson(json['yAxis'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$BarChartPropertiesToJson(BarChartProperties instance) {
   final val = <String, dynamic>{};
@@ -34,13 +33,14 @@ Map<String, dynamic> _$BarChartPropertiesToJson(BarChartProperties instance) {
   return val;
 }
 
-GaugeChartProperties _$GaugeChartPropertiesFromJson(Map<String, dynamic> json) {
-  return GaugeChartProperties()
-    ..backgroundColor = json['backgroundColor'] as String
-    ..gaugeLabels = json['gaugeLabels'] == null
-        ? null
-        : LabelsProperty.fromJson(json['gaugeLabels'] as Map<String, dynamic>);
-}
+GaugeChartProperties _$GaugeChartPropertiesFromJson(
+        Map<String, dynamic> json) =>
+    GaugeChartProperties()
+      ..backgroundColor = json['backgroundColor'] as String
+      ..gaugeLabels = json['gaugeLabels'] == null
+          ? null
+          : LabelsProperty.fromJson(
+              json['gaugeLabels'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$GaugeChartPropertiesToJson(
     GaugeChartProperties instance) {
@@ -57,18 +57,17 @@ Map<String, dynamic> _$GaugeChartPropertiesToJson(
   return val;
 }
 
-LineChartProperties _$LineChartPropertiesFromJson(Map<String, dynamic> json) {
-  return LineChartProperties()
-    ..series = json['series'] == null
-        ? null
-        : SeriesProperty.fromJson(json['series'] as Map<String, dynamic>)
-    ..xAxis = json['xAxis'] == null
-        ? null
-        : AxisProperty.fromJson(json['xAxis'] as Map<String, dynamic>)
-    ..yAxis = json['yAxis'] == null
-        ? null
-        : AxisProperty.fromJson(json['yAxis'] as Map<String, dynamic>);
-}
+LineChartProperties _$LineChartPropertiesFromJson(Map<String, dynamic> json) =>
+    LineChartProperties()
+      ..series = json['series'] == null
+          ? null
+          : SeriesProperty.fromJson(json['series'] as Map<String, dynamic>)
+      ..xAxis = json['xAxis'] == null
+          ? null
+          : AxisProperty.fromJson(json['xAxis'] as Map<String, dynamic>)
+      ..yAxis = json['yAxis'] == null
+          ? null
+          : AxisProperty.fromJson(json['yAxis'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$LineChartPropertiesToJson(LineChartProperties instance) {
   final val = <String, dynamic>{};
@@ -85,13 +84,12 @@ Map<String, dynamic> _$LineChartPropertiesToJson(LineChartProperties instance) {
   return val;
 }
 
-PieChartProperties _$PieChartPropertiesFromJson(Map<String, dynamic> json) {
-  return PieChartProperties()
-    ..pieHole = (json['pieHole'] as num)?.toDouble()
-    ..series = json['series'] == null
-        ? null
-        : SeriesProperty.fromJson(json['series'] as Map<String, dynamic>);
-}
+PieChartProperties _$PieChartPropertiesFromJson(Map<String, dynamic> json) =>
+    PieChartProperties()
+      ..pieHole = (json['pieHole'] as num)?.toDouble()
+      ..series = json['series'] == null
+          ? null
+          : SeriesProperty.fromJson(json['series'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$PieChartPropertiesToJson(PieChartProperties instance) {
   final val = <String, dynamic>{};
@@ -107,21 +105,21 @@ Map<String, dynamic> _$PieChartPropertiesToJson(PieChartProperties instance) {
   return val;
 }
 
-RadarChartProperties _$RadarChartPropertiesFromJson(Map<String, dynamic> json) {
-  return RadarChartProperties()
-    ..series = json['series'] == null
-        ? null
-        : SeriesProperty.fromJson(json['series'] as Map<String, dynamic>)
-    ..markers = json['markers'] == null
-        ? null
-        : MarkersProperty.fromJson(json['markers'] as Map<String, dynamic>)
-    ..xAxis = json['xAxis'] == null
-        ? null
-        : AxisProperty.fromJson(json['xAxis'] as Map<String, dynamic>)
-    ..yAxis = json['yAxis'] == null
-        ? null
-        : AxisProperty.fromJson(json['yAxis'] as Map<String, dynamic>);
-}
+RadarChartProperties _$RadarChartPropertiesFromJson(
+        Map<String, dynamic> json) =>
+    RadarChartProperties()
+      ..series = json['series'] == null
+          ? null
+          : SeriesProperty.fromJson(json['series'] as Map<String, dynamic>)
+      ..markers = json['markers'] == null
+          ? null
+          : MarkersProperty.fromJson(json['markers'] as Map<String, dynamic>)
+      ..xAxis = json['xAxis'] == null
+          ? null
+          : AxisProperty.fromJson(json['xAxis'] as Map<String, dynamic>)
+      ..yAxis = json['yAxis'] == null
+          ? null
+          : AxisProperty.fromJson(json['yAxis'] as Map<String, dynamic>);
 
 Map<String, dynamic> _$RadarChartPropertiesToJson(
     RadarChartProperties instance) {

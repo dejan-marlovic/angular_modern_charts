@@ -6,13 +6,12 @@ part of 'style_property.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-StyleProperty _$StylePropertyFromJson(Map<String, dynamic> json) {
-  return StyleProperty()
-    ..fontFamily = json['fontFamily'] as String
-    ..fontSize = json['fontSize'] as int
-    ..fontStyleProperty = json['fontStyleProperty'] as String
-    ..color = json['color'] as String;
-}
+StyleProperty _$StylePropertyFromJson(Map<String, dynamic> json) =>
+    StyleProperty()
+      ..fontFamily = json['fontFamily'] as String
+      ..fontSize = json['fontSize'] as int
+      ..fontStyleProperty = json['fontStyleProperty'] as String
+      ..color = json['color'] as String;
 
 Map<String, dynamic> _$StylePropertyToJson(StyleProperty instance) {
   final val = <String, dynamic>{};
