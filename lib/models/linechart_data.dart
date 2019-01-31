@@ -10,12 +10,7 @@ class LineChartData extends BaseData {
         ]..addAll(_points.map((c) => c.encoded)))) {
     if (_points.length < 2) {
       throw ArgumentError('At least two points are required.');
-    }
-    for (final column in _points) {
-      if (column._data.length != _categories.length)
-        throw StateError(
-            'Each column has to contain the same number of values as there are categories.');
-    }
+    }    
   }
 
   List<String> get categories => _categories.sublist(1);
