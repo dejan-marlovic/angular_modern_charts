@@ -42,4 +42,4 @@ app_component.html
 </div>
 ```
 Output
-![Output](https://github.com/dejan-marlovic/angular_modern_charts/raw/master/examples/barchart.png)
+![Output](https://raw.githubusercontent.com/dejan-marlovic/angular_modern_charts/master/example/barchart.png)
