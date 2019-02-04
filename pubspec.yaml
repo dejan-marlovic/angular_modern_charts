@@ -1,6 +1,6 @@
 name: angular_modern_charts
 description: Angular wrapper for the modern charts library. This wrapper utilizes core angular concepts such as, component/model/template structure and property bindings.
-version: 0.1.1
+version: 0.1.2
 homepage: https://github.com/dejan-marlovic/angular_modern_charts
 author: Dejan Marlovic <dmarlovic83@gmail.com>
 
