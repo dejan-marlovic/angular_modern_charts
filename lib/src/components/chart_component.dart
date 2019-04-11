@@ -17,8 +17,7 @@ part '../../components/linechart_component.dart';
 part '../../components/piechart_component.dart';
 part '../../components/radarchart_component.dart';
 
-abstract class ChartComponent
-    implements OnInit, AfterChanges, AfterViewInit, OnDestroy {
+abstract class ChartComponent implements OnInit, AfterViewInit, AfterChanges, OnDestroy {
   @Input()
   BaseData chartData;
 
@@ -42,12 +41,16 @@ abstract class ChartComponent
 
   @override
   void ngAfterChanges() {
-    _chart?.draw(chartData.encoded, optionsData);
+    if (_chart != null && chartData != null)
+      _chart?.draw(chartData.encoded, optionsData);
   }
 
   @override
   void ngOnDestroy() {
-    _chart.dispose();
+    Future.delayed(Duration(milliseconds: 3000)).then((_) {
+      _chart.dispose();
+    });
+
     _resizeListener?.cancel();
   }
 
