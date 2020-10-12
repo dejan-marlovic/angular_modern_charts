@@ -1,6 +1,8 @@
 analyzer:  
   exclude:
-    - .dart_tool
+    - .dart_tool 
+    - lib/models/*.g.dart
+    - lib/src/models/*.g.dart
   plugins:
     - angular      
   errors:
